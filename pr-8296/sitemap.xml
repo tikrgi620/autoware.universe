@@ -61,6 +61,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://autowarefoundation.github.io/autoware.universe/pr-8296/common/autoware_path_distance_calculator/Readme/</loc>
+         <lastmod>2024-08-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/pr-8296/common/autoware_perception_rviz_plugin/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
@@ -152,11 +157,6 @@
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/pr-8296/common/osqp_interface/design/osqp_interface-design/</loc>
-         <lastmod>2024-08-14</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://autowarefoundation.github.io/autoware.universe/pr-8296/common/path_distance_calculator/Readme/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -451,12 +451,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://autowarefoundation.github.io/autoware.universe/pr-8296/localization/autoware_geo_pose_projector/</loc>
+         <lastmod>2024-08-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/pr-8296/localization/autoware_landmark_based_localizer/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/pr-8296/localization/autoware_landmark_based_localizer/autoware_ar_tag_based_localizer/</loc>
+         <lastmod>2024-08-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://autowarefoundation.github.io/autoware.universe/pr-8296/localization/autoware_pose2twist/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -471,12 +481,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://autowarefoundation.github.io/autoware.universe/pr-8296/localization/ekf_localizer/</loc>
+         <loc>https://autowarefoundation.github.io/autoware.universe/pr-8296/localization/autoware_twist2accel/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://autowarefoundation.github.io/autoware.universe/pr-8296/localization/geo_pose_projector/</loc>
+         <loc>https://autowarefoundation.github.io/autoware.universe/pr-8296/localization/ekf_localizer/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -501,11 +511,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://autowarefoundation.github.io/autoware.universe/pr-8296/localization/pose2twist/</loc>
-         <lastmod>2024-08-14</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/pr-8296/localization/pose_estimator_arbiter/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
@@ -522,11 +527,6 @@
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/pr-8296/localization/pose_instability_detector/</loc>
-         <lastmod>2024-08-14</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://autowarefoundation.github.io/autoware.universe/pr-8296/localization/twist2accel/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
