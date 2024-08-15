@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#detected_object_validation" class="md-skip">
+        <a href="#macro-rendering-error" class="md-skip">
           Skip to content
         </a>
       
@@ -13047,41 +13047,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#purpose" class="md-nav__link">
-    Purpose
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#referencesexternal-links" class="md-nav__link">
-    References/External links
-  </a>
-  
-    <nav class="md-nav" aria-label="References/External links">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#node-parameters" class="md-nav__link">
-    Node Parameters
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -13098,290 +13063,21 @@
   
 
 
-<div><h1 id="detected_object_validation">detected_object_validation<a class="headerlink" href="#detected_object_validation" title="Permanent link">#</a></h1>
-<h2 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link">#</a></h2>
-<p>The purpose of this package is to eliminate obvious false positives of DetectedObjects.</p>
-<h2 id="referencesexternal-links">References/External links<a class="headerlink" href="#referencesexternal-links" title="Permanent link">#</a></h2>
-<ul>
-<li><a href="obstacle-pointcloud-based-validator/">Obstacle pointcloud based validator</a></li>
-<li><a href="occupancy-grid-based-validator/">Occupancy grid based validator</a></li>
-<li><a href="object-lanelet-filter/">Object lanelet filter</a></li>
-<li><a href="object-position-filter/">Object position filter</a></li>
-</ul>
-<h3 id="node-parameters">Node Parameters<a class="headerlink" href="#node-parameters" title="Permanent link">#</a></h3>
-<h4 id="object_lanelet_filter">object_lanelet_filter<a class="headerlink" href="#object_lanelet_filter" title="Permanent link">#</a></h4>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-<th>Range</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>filter_target_label.UNKNOWN</td>
-<td>boolean</td>
-<td>If true, unknown objects are filtered.</td>
-<td>1</td>
-<td>N/A</td>
-</tr>
-<tr>
-<td>filter_target_label.CAR</td>
-<td>boolean</td>
-<td>If true, car objects are filtered.</td>
-<td>0</td>
-<td>N/A</td>
-</tr>
-<tr>
-<td>filter_target_label.TRUCK</td>
-<td>boolean</td>
-<td>If true, truck objects are filtered.</td>
-<td>0</td>
-<td>N/A</td>
-</tr>
-<tr>
-<td>filter_target_label.BUS</td>
-<td>boolean</td>
-<td>If true, bus objects are filtered.</td>
-<td>0</td>
-<td>N/A</td>
-</tr>
-<tr>
-<td>filter_target_label.TRAILER</td>
-<td>boolean</td>
-<td>If true, trailer objects are filtered.</td>
-<td>0</td>
-<td>N/A</td>
-</tr>
-<tr>
-<td>filter_target_label.MOTORCYCLE</td>
-<td>boolean</td>
-<td>If true, motorcycle objects are filtered.</td>
-<td>0</td>
-<td>N/A</td>
-</tr>
-<tr>
-<td>filter_target_label.BICYCLE</td>
-<td>boolean</td>
-<td>If true, bicycle objects are filtered.</td>
-<td>0</td>
-<td>N/A</td>
-</tr>
-<tr>
-<td>filter_target_label.PEDESTRIAN</td>
-<td>boolean</td>
-<td>If true, pedestrian objects are filtered.</td>
-<td>0</td>
-<td>N/A</td>
-</tr>
-<tr>
-<td>polygon_overlap_filter.enabled</td>
-<td>boolean</td>
-<td>If true, objects that are not in the lanelet polygon are filtered.</td>
-<td>1</td>
-<td>N/A</td>
-</tr>
-<tr>
-<td>lanelet_direction_filter.enabled</td>
-<td>boolean</td>
-<td>If true, objects that are not in the same direction as the lanelet are filtered.</td>
-<td>0</td>
-<td>N/A</td>
-</tr>
-<tr>
-<td>lanelet_direction_filter.velocity_yaw_threshold</td>
-<td>float</td>
-<td>If the yaw difference between the object and the lanelet is greater than this value, the object is filtered.</td>
-<td>0.785398</td>
-<td>N/A</td>
-</tr>
-<tr>
-<td>lanelet_direction_filter.object_speed_threshold</td>
-<td>float</td>
-<td>If the object speed is greater than this value, the object is filtered.</td>
-<td>3</td>
-<td>N/A</td>
-</tr>
-</tbody>
-</table>
-<h4 id="object_position_filter">object_position_filter<a class="headerlink" href="#object_position_filter" title="Permanent link">#</a></h4>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-<th>Range</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>upper_bound_x</td>
-<td>float</td>
-<td>Bound for filtering. Only used if filter_by_xy_position is true</td>
-<td>100</td>
-<td>N/A</td>
-</tr>
-<tr>
-<td>upper_bound_y</td>
-<td>float</td>
-<td>Bound for filtering. Only used if filter_by_xy_position is true</td>
-<td>50</td>
-<td>N/A</td>
-</tr>
-<tr>
-<td>lower_bound_x</td>
-<td>float</td>
-<td>Bound for filtering. Only used if filter_by_xy_position is true</td>
-<td>0</td>
-<td>N/A</td>
-</tr>
-<tr>
-<td>lower_bound_y</td>
-<td>float</td>
-<td>Bound for filtering. Only used if filter_by_xy_position is true</td>
-<td>-50</td>
-<td>N/A</td>
-</tr>
-<tr>
-<td>filter_target_label.UNKNOWN</td>
-<td>boolean</td>
-<td>If true, unknown objects are filtered.</td>
-<td>1</td>
-<td>N/A</td>
-</tr>
-<tr>
-<td>filter_target_label.CAR</td>
-<td>boolean</td>
-<td>If true, car objects are filtered.</td>
-<td>0</td>
-<td>N/A</td>
-</tr>
-<tr>
-<td>filter_target_label.TRUCK</td>
-<td>boolean</td>
-<td>If true, truck objects are filtered.</td>
-<td>0</td>
-<td>N/A</td>
-</tr>
-<tr>
-<td>filter_target_label.BUS</td>
-<td>boolean</td>
-<td>If true, bus objects are filtered.</td>
-<td>0</td>
-<td>N/A</td>
-</tr>
-<tr>
-<td>filter_target_label.TRAILER</td>
-<td>boolean</td>
-<td>If true, trailer objects are filtered.</td>
-<td>0</td>
-<td>N/A</td>
-</tr>
-<tr>
-<td>filter_target_label.MOTORCYCLE</td>
-<td>boolean</td>
-<td>If true, motorcycle objects are filtered.</td>
-<td>0</td>
-<td>N/A</td>
-</tr>
-<tr>
-<td>filter_target_label.BICYCLE</td>
-<td>boolean</td>
-<td>If true, bicycle objects are filtered.</td>
-<td>0</td>
-<td>N/A</td>
-</tr>
-<tr>
-<td>filter_target_label.PEDESTRIAN</td>
-<td>boolean</td>
-<td>If true, pedestrian objects are filtered.</td>
-<td>0</td>
-<td>N/A</td>
-</tr>
-</tbody>
-</table>
-<h4 id="obstacle_pointcloud_based_validator">obstacle_pointcloud_based_validator<a class="headerlink" href="#obstacle_pointcloud_based_validator" title="Permanent link">#</a></h4>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-<th>Range</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>min_points_num</td>
-<td>array</td>
-<td>The minimum number of obstacle point clouds in DetectedObjects</td>
-<td>[10, 10, 10, 10, 10, 10, 10, 10]</td>
-<td>N/A</td>
-</tr>
-<tr>
-<td>max_points_num</td>
-<td>array</td>
-<td>The max number of obstacle point clouds in DetectedObjects</td>
-<td>[10, 10, 10, 10, 10, 10, 10, 10]</td>
-<td>N/A</td>
-</tr>
-<tr>
-<td>min_points_and_distance_ratio</td>
-<td>array</td>
-<td>Threshold value of the number of point clouds per object when the distance from baselink is 1m, because the number of point clouds varies with the distance from baselink.</td>
-<td>[800, 800, 800, 800, 800, 800, 800, 800]</td>
-<td>N/A</td>
-</tr>
-<tr>
-<td>using_2d_validator</td>
-<td>boolean</td>
-<td>The xy-plane projected (2D) obstacle point clouds will be used for validation</td>
-<td>False</td>
-<td>N/A</td>
-</tr>
-<tr>
-<td>enable_debugger</td>
-<td>boolean</td>
-<td>Whether to create debug topics or not?</td>
-<td>False</td>
-<td>N/A</td>
-</tr>
-</tbody>
-</table>
-<h4 id="occupancy_grid_based_validator">occupancy_grid_based_validator<a class="headerlink" href="#occupancy_grid_based_validator" title="Permanent link">#</a></h4>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-<th>Range</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>mean_threshold</td>
-<td>float</td>
-<td>The percentage threshold of allowed non-freespace.</td>
-<td>0.6</td>
-<td>N/A</td>
-</tr>
-<tr>
-<td>enable_debug</td>
-<td>boolean</td>
-<td>Whether to display debug images or not?</td>
-<td>0</td>
-<td>N/A</td>
-</tr>
-</tbody>
-</table></div>
+<div><h1 id="macro-rendering-error"><em>Macro Rendering Error</em><a class="headerlink" href="#macro-rendering-error" title="Permanent link">#</a></h1>
+<p><em>File</em>: <code>perception/autoware_detected_object_validation/README.md</code></p>
+<p><em>FileNotFoundError</em>: [Errno 2] No such file or directory: 'perception/detected_object_validation/schema/object_lanelet_filter.schema.json'</p>
+<div class="highlight"><pre><span></span><code>Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/mkdocs_macros/plugin.py", line 527, in render
+    return md_template.render(**page_variables)
+  File "/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/jinja2/environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/jinja2/environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "&lt;template&gt;", line 18, in top-level template code
+  File "/home/runner/work/autoware.universe/autoware.universe/mkdocs_macros.py", line 70, in json_to_markdown
+    with open(json_schema_file_path) as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'perception/detected_object_validation/schema/object_lanelet_filter.schema.json'
+</code></pre></div></div>
 
 
 
