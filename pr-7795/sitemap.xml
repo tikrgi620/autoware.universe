@@ -36,6 +36,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://autowarefoundation.github.io/autoware.universe/pr-7795/common/autoware_geography_utils/</loc>
+         <lastmod>2024-08-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/pr-7795/common/autoware_grid_map_utils/</loc>
          <lastmod>2024-08-15</lastmod>
          <changefreq>daily</changefreq>
@@ -117,11 +122,6 @@
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/pr-7795/common/fake_test_node/design/fake_test_node-design/</loc>
-         <lastmod>2024-08-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://autowarefoundation.github.io/autoware.universe/pr-7795/common/geography_utils/</loc>
          <lastmod>2024-08-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -451,6 +451,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://autowarefoundation.github.io/autoware.universe/pr-7795/localization/autoware_geo_pose_projector/</loc>
+         <lastmod>2024-08-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/pr-7795/localization/autoware_landmark_based_localizer/</loc>
          <lastmod>2024-08-15</lastmod>
          <changefreq>daily</changefreq>
@@ -482,11 +487,6 @@
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/pr-7795/localization/ekf_localizer/</loc>
-         <lastmod>2024-08-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://autowarefoundation.github.io/autoware.universe/pr-7795/localization/geo_pose_projector/</loc>
          <lastmod>2024-08-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1042,6 +1042,11 @@
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/pr-7795/planning/behavior_path_planner/autoware_behavior_path_planner/docs/behavior_path_planner_manager_design/</loc>
+         <lastmod>2024-08-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://autowarefoundation.github.io/autoware.universe/pr-7795/planning/behavior_path_planner/autoware_behavior_path_planner_common/docs/behavior_path_planner_develop_maps/</loc>
          <lastmod>2024-08-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
