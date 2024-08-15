@@ -8,20 +8,20 @@
       
       
       
-        <link rel="canonical" href="https://autowarefoundation.github.io/autoware.universe/main/planning/behavior_path_planner/autoware_behavior_path_planner/docs/behavior_path_planner_manager_design/">
+        <link rel="canonical" href="https://autowarefoundation.github.io/autoware.universe/main/planning/behavior_path_planner/autoware_behavior_path_planner_common/docs/behavior_path_planner_develop_maps/">
       
       
-        <link rel="prev" href="../behavior_path_planner_limitations/">
+        <link rel="prev" href="../../../autoware_behavior_path_planner/docs/behavior_path_planner_manager_design/">
       
       
-        <link rel="next" href="../../../autoware_behavior_path_planner_common/docs/behavior_path_planner_develop_maps/">
+        <link rel="next" href="../behavior_path_planner_drivable_area_design/">
       
       <link rel="icon" href="../../../../../docs/assets/images/autoware-foundation.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.20">
     
     
       
-        <title>Manager design - Autoware Universe Documentation</title>
+        <title>Develop purpose maps - Autoware Universe Documentation</title>
       
     
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#manager-design" class="md-skip">
+        <a href="#develop-purpose-maps" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Manager design
+              Develop purpose maps
             
           </span>
         </div>
@@ -7513,7 +7513,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../../autoware_behavior_path_planner" class="md-nav__link">
         About Behavior Path
       </a>
     </li>
@@ -7570,7 +7570,7 @@
   
   
     <li class="md-nav__item">
-      <a href="." class="md-nav__link">
+      <a href="../../../autoware_behavior_path_planner/docs/behavior_path_planner_manager_design" class="md-nav__link">
         Planner Manager
       </a>
     </li>
@@ -7584,7 +7584,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../behavior_path_planner_interface_design" class="md-nav__link">
+      <a href="../../../autoware_behavior_path_planner/docs/behavior_path_planner_interface_design" class="md-nav__link">
         Scene Module Interface
       </a>
     </li>
@@ -7598,7 +7598,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../autoware_behavior_path_planner_common/docs/behavior_path_planner_path_generation_design" class="md-nav__link">
+      <a href="../behavior_path_planner_path_generation_design" class="md-nav__link">
         Path Generation
       </a>
     </li>
@@ -7612,7 +7612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../autoware_behavior_path_planner_common/docs/behavior_path_planner_safety_check" class="md-nav__link">
+      <a href="../behavior_path_planner_safety_check" class="md-nav__link">
         Collision Assessment/Safety Check
       </a>
     </li>
@@ -7626,7 +7626,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../autoware_behavior_path_planner_common/docs/behavior_path_planner_drivable_area_design" class="md-nav__link">
+      <a href="../behavior_path_planner_drivable_area_design" class="md-nav__link">
         Dynamic Drivable Area
       </a>
     </li>
@@ -7640,7 +7640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../autoware_behavior_path_planner_common/docs/behavior_path_planner_turn_signal_design" class="md-nav__link">
+      <a href="../behavior_path_planner_turn_signal_design" class="md-nav__link">
         Turn Signal
       </a>
     </li>
@@ -13054,221 +13054,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#purpose-role" class="md-nav__link">
-    Purpose / Role
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    Overview
-  </a>
-  
-    <nav class="md-nav" aria-label="Overview">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#slot" class="md-nav__link">
-    Slot
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sub-managers" class="md-nav__link">
-    Sub-managers
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#scene-modules" class="md-nav__link">
-    Scene modules
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#process-flow" class="md-nav__link">
-    Process flow
-  </a>
-  
-    <nav class="md-nav" aria-label="Process flow">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step1" class="md-nav__link">
-    Step1
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step2" class="md-nav__link">
-    Step2
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step3" class="md-nav__link">
-    Step3
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step4" class="md-nav__link">
-    Step4
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step5" class="md-nav__link">
-    Step5
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step6" class="md-nav__link">
-    Step6
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#priority-of-execution-request" class="md-nav__link">
-    Priority of execution request
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-decide-which-request-modules-to-run" class="md-nav__link">
-    How to decide which request modules to run?
-  </a>
-  
-    <nav class="md-nav" aria-label="How to decide which request modules to run?">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step1_1" class="md-nav__link">
-    Step1
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step2_1" class="md-nav__link">
-    Step2
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step3_1" class="md-nav__link">
-    Step3
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step4_1" class="md-nav__link">
-    Step4
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step5_1" class="md-nav__link">
-    Step5
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-decide-which-modules-output-to-use" class="md-nav__link">
-    How to decide which module's output to use?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#scene-module-unregister-process" class="md-nav__link">
-    Scene module unregister process
-  </a>
-  
-    <nav class="md-nav" aria-label="Scene module unregister process">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#waiting-approval-modules" class="md-nav__link">
-    Waiting approval modules
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#failure-modules" class="md-nav__link">
-    Failure modules
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#succeeded-modules" class="md-nav__link">
-    Succeeded modules
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#slot-output-propagation" class="md-nav__link">
-    Slot output propagation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reference-path-generation" class="md-nav__link">
-    Reference path generation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#drivable-area-generation" class="md-nav__link">
-    Drivable area generation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#turn-signal-management" class="md-nav__link">
-    Turn signal management
+  <a href="#road_shoulders" class="md-nav__link">
+    road_shoulders
   </a>
   
 </li>
@@ -13291,639 +13078,15 @@
   
 
 
-<div><h1 id="manager-design">Manager design<a class="headerlink" href="#manager-design" title="Permanent link">#</a></h1>
-<h2 id="purpose-role">Purpose / Role<a class="headerlink" href="#purpose-role" title="Permanent link">#</a></h2>
-<p>The manager launches and executes scene modules in <code>behavior_path_planner</code> depending on the use case, and has been developed to achieve following features:</p>
+<div><h1 id="develop-purpose-maps">Develop purpose maps<a class="headerlink" href="#develop-purpose-maps" title="Permanent link">#</a></h1>
+<h2 id="road_shoulders">road_shoulders<a class="headerlink" href="#road_shoulders" title="Permanent link">#</a></h2>
+<p>The road_shoulders lanelet map consist of a variety of pick-up/drop-off site maps with road_shoulder tags including:</p>
 <ul>
-<li>Multiple modules can run simultaneously in series in order to achieve more complex use cases. For example, as shown in the following video, this manager make it possible to avoid a parked vehicle during lane change maneuver.</li>
-<li>Flexible development by not relying on framework from external libraries.</li>
+<li>pick-up/drop-off sites on the side of street lanes</li>
+<li>pick-up/drop-off sites on the side of curved lanes</li>
+<li>pick-up/drop-off sites inside a private area</li>
 </ul>
-<p><img alt="example" src="../../image/manager/example_behavior.svg"></p>
-<p><a href="https://user-images.githubusercontent.com/44889564/231639251-6631dc4e-1861-47e7-9c51-6df1b666ce9b.mp4">Movie</a></p>
-<p>Support status:</p>
-<table>
-<thead>
-<tr>
-<th align="left">Name</th>
-<th align="center">Simple exclusive execution</th>
-<th align="center">Advanced simultaneous execution</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">Avoidance</td>
-<td align="center"><img alt="✔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2714.svg" title=":heavy_check_mark:"></td>
-<td align="center"><img alt="✔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2714.svg" title=":heavy_check_mark:"></td>
-</tr>
-<tr>
-<td align="left">Avoidance By Lane Change</td>
-<td align="center"><img alt="✔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2714.svg" title=":heavy_check_mark:"></td>
-<td align="center"><img alt="✖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2716.svg" title=":heavy_multiplication_x:"></td>
-</tr>
-<tr>
-<td align="left">Lane Change</td>
-<td align="center"><img alt="✔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2714.svg" title=":heavy_check_mark:"></td>
-<td align="center"><img alt="✔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2714.svg" title=":heavy_check_mark:"></td>
-</tr>
-<tr>
-<td align="left">External Lane Change</td>
-<td align="center"><img alt="✔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2714.svg" title=":heavy_check_mark:"></td>
-<td align="center"><img alt="✖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2716.svg" title=":heavy_multiplication_x:"></td>
-</tr>
-<tr>
-<td align="left">Goal Planner (without goal modification)</td>
-<td align="center"><img alt="✔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2714.svg" title=":heavy_check_mark:"></td>
-<td align="center"><img alt="✔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2714.svg" title=":heavy_check_mark:"></td>
-</tr>
-<tr>
-<td align="left">Goal Planner (with goal modification)</td>
-<td align="center"><img alt="✔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2714.svg" title=":heavy_check_mark:"></td>
-<td align="center"><img alt="✖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2716.svg" title=":heavy_multiplication_x:"></td>
-</tr>
-<tr>
-<td align="left">Pull Out</td>
-<td align="center"><img alt="✔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2714.svg" title=":heavy_check_mark:"></td>
-<td align="center"><img alt="✔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2714.svg" title=":heavy_check_mark:"></td>
-</tr>
-<tr>
-<td align="left">Side Shift</td>
-<td align="center"><img alt="✔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2714.svg" title=":heavy_check_mark:"></td>
-<td align="center"><img alt="✖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2716.svg" title=":heavy_multiplication_x:"></td>
-</tr>
-</tbody>
-</table>
-<p>Click <a href="../../">here</a> for supported scene modules.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>It is still under development and some functions may be unstable.</p>
-</div>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">#</a></h2>
-<p>The manager is the core part of the <code>behavior_path_planner</code> implementation. It outputs path based on the latest data.</p>
-<p>The manager has sub-managers for each scene module, and its main task is</p>
-<ul>
-<li>set latest planner data to scene modules via sub-managers.</li>
-<li>check scene module's request status via sub-managers.</li>
-<li>launch scene modules that make execution request.</li>
-<li>execute launched modules.</li>
-<li>delete scene expired modules.</li>
-</ul>
-<p>Additionally, the manager generates root reference path, and if any other modules don't request execution, the path is used as the planning result of <code>behavior_path_planner</code>.</p>
-<p><img alt="manager_overview" src="../../image/manager/manager_overview.svg"></p>
-<h3 id="slot">Slot<a class="headerlink" href="#slot" title="Permanent link">#</a></h3>
-<p>The manager owns several containers of sub-managers, namely <em>slots</em>, that holds/runs several sub-managers and send the output to the next slot. Given the initial reference path, each slot processes the input path and the output path is processed by the next slot. The final slot output is utilized as the output of the manager. The slot passes following information</p>
-<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">SlotOutput</span>
-<span class="p">{</span>
-<span class="w">  </span><span class="n">BehaviorModuleOutput</span><span class="w"> </span><span class="n">valid_output</span><span class="p">;</span>
-
-<span class="w">  </span><span class="c1">// if candidate module is running, valid_output contains the planning by candidate module. In</span>
-<span class="w">  </span><span class="c1">// that case, downstream slots will just run aproved modules and do not try to launch new</span>
-<span class="w">  </span><span class="c1">// modules</span>
-<span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="n">is_upstream_candidate_exclusive</span><span class="p">{</span><span class="nb">false</span><span class="p">};</span>
-
-<span class="w">  </span><span class="c1">// if this slot failed, downstream slots need to refresh approved/candidate modules and just</span>
-<span class="w">  </span><span class="c1">// forward valid_output of this slot output</span>
-<span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="n">is_upstream_failed_approved</span><span class="p">{</span><span class="nb">false</span><span class="p">};</span>
-
-<span class="w">  </span><span class="c1">// if the approved module in this slot returned to isWaitingApproval, downstream slots need to</span>
-<span class="w">  </span><span class="c1">// refresh candidate once</span>
-<span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="n">is_upstream_waiting_approved</span><span class="p">{</span><span class="nb">false</span><span class="p">};</span>
-<span class="p">};</span>
-</code></pre></div>
-<h3 id="sub-managers">Sub-managers<a class="headerlink" href="#sub-managers" title="Permanent link">#</a></h3>
-<p>The sub-manager's main task is</p>
-<ul>
-<li>store the launched modules in internal vectors <code>registered_modules_</code>.</li>
-<li>create scene module instance.</li>
-<li>pass scene module's instance to the manager.</li>
-<li>delete expired scene module instance from <code>registered_modules_</code>.</li>
-<li>publish debug markers.</li>
-</ul>
-<figure>
-<p><img alt="sub_managers" src="../../image/manager/sub_managers.svg" width="1000">
-  </p>
-<figcaption>sub-managers</figcaption>
-</figure>
-<p>Sub-manager is registered on the manager with the following function.</p>
-<div class="highlight"><pre><span></span><code><span class="cm">/**</span>
-<span class="cm"> * @brief register managers.</span>
-<span class="cm"> * @param manager pointer.</span>
-<span class="cm"> */</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">registerSceneModuleManager</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">SceneModuleManagerPtr</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">manager_ptr</span><span class="p">)</span>
-<span class="p">{</span>
-<span class="w">  </span><span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">logger_</span><span class="p">,</span><span class="w"> </span><span class="s">"register %s module"</span><span class="p">,</span><span class="w"> </span><span class="n">manager_ptr</span><span class="o">-&gt;</span><span class="n">getModuleName</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span>
-<span class="w">  </span><span class="n">manager_ptrs_</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">manager_ptr</span><span class="p">);</span>
-<span class="w">  </span><span class="n">processing_time_</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span><span class="n">manager_ptr</span><span class="o">-&gt;</span><span class="n">getModuleName</span><span class="p">(),</span><span class="w"> </span><span class="mf">0.0</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>Code is <a href="https://github.com/autowarefoundation/autoware.universe/blob/b1734916e3efd9786507a271e0fe829dd37476c8/planning/behavior_path_planner/include/behavior_path_planner/planner_manager.hpp#L66-L75">here</a></p>
-<p>Sub-manager has the following parameters that are needed by the manager to manage the launched modules, and these parameters can be set for each module.</p>
-<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">ModuleConfigParameters</span>
-<span class="p">{</span>
-<span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="n">enable_module</span><span class="p">{</span><span class="nb">false</span><span class="p">};</span>
-<span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="n">enable_rtc</span><span class="p">{</span><span class="nb">false</span><span class="p">};</span>
-<span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="n">enable_simultaneous_execution_as_approved_module</span><span class="p">{</span><span class="nb">false</span><span class="p">};</span>
-<span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="n">enable_simultaneous_execution_as_candidate_module</span><span class="p">{</span><span class="nb">false</span><span class="p">};</span>
-<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">priority</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span>
-<span class="p">};</span>
-</code></pre></div>
-<p>Code is <a href="https://github.com/autowarefoundation/autoware.universe/blob/b1734916e3efd9786507a271e0fe829dd37476c8/planning/behavior_path_planner/include/behavior_path_planner/parameters.hpp#L23-L30">here</a></p>
-<table>
-<thead>
-<tr>
-<th align="left">Name</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><code>enable_module</code></td>
-<td align="left">bool</td>
-<td align="left">if true, the sub-manager is registered on the manager.</td>
-</tr>
-<tr>
-<td align="left"><code>enable_rtc</code></td>
-<td align="left">bool</td>
-<td align="left">if true, the scene modules should be approved by (request to cooperate)rtc function. if false, the module can be run without approval from rtc.</td>
-</tr>
-<tr>
-<td align="left"><code>enable_simultaneous_execution_as_candidate_module</code></td>
-<td align="left">bool</td>
-<td align="left">if true, the manager allows its scene modules to run with other scene modules as <strong>candidate module</strong>.</td>
-</tr>
-<tr>
-<td align="left"><code>enable_simultaneous_execution_as_approved_module</code></td>
-<td align="left">bool</td>
-<td align="left">if true, the manager allows its scene modules to run with other scene modules as <strong>approved module</strong>.</td>
-</tr>
-<tr>
-<td align="left"><code>priority</code></td>
-<td align="left">uint8_t</td>
-<td align="left">the manager decides execution priority based on this parameter. The smaller the number is, the higher the priority is.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="scene-modules">Scene modules<a class="headerlink" href="#scene-modules" title="Permanent link">#</a></h3>
-<p>Scene modules receives necessary data and RTC command, and outputs candidate path(s), reference path and RTC cooperate status. When multiple modules run in series, the output of the previous module is received as input and the information is used to generate a new modified path, as shown in the following figure. And, when one module is running alone, it receives a reference path generated from the centerline of the lane in which Ego is currently driving as previous module output.</p>
-<figure>
-<p><img alt="scene_module" src="../../image/manager/scene_module.svg" width="1000">
-  </p>
-<figcaption>scene module</figcaption>
-</figure>
-<table>
-<thead>
-<tr>
-<th align="left">I/O</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">IN</td>
-<td align="left"><code>behavior_path_planner::BehaviorModuleOutput</code></td>
-<td align="left">previous module output. contains data necessary for path planning.</td>
-</tr>
-<tr>
-<td align="left">IN</td>
-<td align="left"><code>behavior_path_planner::PlannerData</code></td>
-<td align="left">contains data necessary for path planning.</td>
-</tr>
-<tr>
-<td align="left">IN</td>
-<td align="left"><code>tier4_planning_msgs::srv::CooperateCommands</code></td>
-<td align="left">contains approval data for scene module's path modification. (<a href="https://github.com/autowarefoundation/autoware.universe/blob/main/planning/rtc_interface/README.md">details</a>)</td>
-</tr>
-<tr>
-<td align="left">OUT</td>
-<td align="left"><code>behavior_path_planner::BehaviorModuleOutput</code></td>
-<td align="left">contains modified path, turn signal information, etc...</td>
-</tr>
-<tr>
-<td align="left">OUT</td>
-<td align="left"><code>tier4_planning_msgs::msg::CooperateStatus</code></td>
-<td align="left">contains RTC cooperate status. (<a href="https://github.com/autowarefoundation/autoware.universe/blob/main/planning/rtc_interface/README.md">details</a>)</td>
-</tr>
-<tr>
-<td align="left">OUT</td>
-<td align="left"><code>autoware_planning_msgs::msg::Path</code></td>
-<td align="left">candidate path output by a module that has not received approval for path change. when it approved, the ego's following path is switched to this path. (just for visualization)</td>
-</tr>
-<tr>
-<td align="left">OUT</td>
-<td align="left"><code>autoware_planning_msgs::msg::Path</code></td>
-<td align="left">reference path generated from the centerline of the lane the ego is going to follow. (just for visualization)</td>
-</tr>
-<tr>
-<td align="left">OUT</td>
-<td align="left"><code>visualization_msgs::msg::MarkerArray</code></td>
-<td align="left">virtual wall, debug info, etc...</td>
-</tr>
-</tbody>
-</table>
-<p>Scene modules running on the manager are stored on the <strong>candidate modules stack</strong> or <strong>approved modules stack</strong> depending on the condition whether the path modification has been approved or not.</p>
-<table>
-<thead>
-<tr>
-<th align="left">Stack</th>
-<th align="left">Approval condition</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">candidate modules</td>
-<td align="left">Not approved</td>
-<td align="left">The candidate modules whose modified path has not been approved by <a href="https://github.com/autowarefoundation/autoware.universe/blob/main/planning/rtc_interface/README.md">RTC</a> is stored in vector <code>candidate_module_ptrs_</code> in the manager. The candidate modules stack is updated in the following order. 1. The manager selects only those modules that can be executed based on the configuration of the sub-manager whose scene module requests execution. 2. Determines the execution priority. 3. Executes them as candidate module. All of these modules receive the decided (approved) path from approved modules stack and <strong>RUN in PARALLEL</strong>. <br><img alt="candidate_modules_stack" src="../../image/manager/candidate_modules_stack.svg"></td>
-</tr>
-<tr>
-<td align="left">approved modules</td>
-<td align="left">Already approved</td>
-<td align="left">When the path modification is approved via RTC commands, the manager moves the candidate module to approved modules stack. These modules are stored in <code>approved_module_ptrs_</code>. In this stack, all scene modules <strong>RUN in SERIES</strong>. <br><img alt="approved_modules_stack" src="../../image/manager/approved_modules_stack.svg"></td>
-</tr>
-</tbody>
-</table>
-<h2 id="process-flow">Process flow<a class="headerlink" href="#process-flow" title="Permanent link">#</a></h2>
-<p>There are 6 steps in one process:</p>
-<h3 id="step1">Step1<a class="headerlink" href="#step1" title="Permanent link">#</a></h3>
-<p>At first, the manager set latest planner data, and run all approved modules and get output path. At this time, the manager checks module status and removes expired modules from approved modules stack.</p>
-<p><img alt="process_step1" src="../../image/manager/process_step1.drawio.svg"></p>
-<h3 id="step2">Step2<a class="headerlink" href="#step2" title="Permanent link">#</a></h3>
-<p>Input approved modules output and necessary data to all registered modules, and the modules judge the necessity of path modification based on it. The manager checks which module makes execution request.</p>
-<p><img alt="process_step2" src="../../image/manager/process_step2.drawio.svg"></p>
-<h3 id="step3">Step3<a class="headerlink" href="#step3" title="Permanent link">#</a></h3>
-<p>Check request module existence.</p>
-<h3 id="step4">Step4<a class="headerlink" href="#step4" title="Permanent link">#</a></h3>
-<p>The manager decides which module to execute as candidate modules from the modules that requested to execute path modification.</p>
-<p><img alt="process_step4" src="../../image/manager/process_step4.drawio.svg"></p>
-<h3 id="step5">Step5<a class="headerlink" href="#step5" title="Permanent link">#</a></h3>
-<p>Decides the priority order of execution among candidate modules. And, run all candidate modules. Each modules outputs reference path and RTC cooperate status.</p>
-<p><img alt="process_step5" src="../../image/manager/process_step5.drawio.svg"></p>
-<h3 id="step6">Step6<a class="headerlink" href="#step6" title="Permanent link">#</a></h3>
-<p>Move approved module to approved modules stack from candidate modules stack.</p>
-<p><img alt="process_step6" src="../../image/manager/process_step6.drawio.svg"></p>
-<hr>
-<p>and, within a single planning cycle, these steps are repeated until the following conditions are satisfied.</p>
-<ul>
-<li><strong>Any modules don't make a request of path modification. (Check in Step3)</strong></li>
-<li><strong>Any candidate modules' request are not approved. (Check in Step5)</strong></li>
-</ul>
-<p><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBjb250ZW50U3R5bGVUeXBlPSJ0ZXh0L2NzcyIgaGVpZ2h0PSIxMDc1cHgiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHN0eWxlPSJ3aWR0aDo3NjRweDtoZWlnaHQ6MTA3NXB4O2JhY2tncm91bmQ6I0ZGRkZGRjsiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDc2NCAxMDc1IiB3aWR0aD0iNzY0cHgiIHpvb21BbmRQYW49Im1hZ25pZnkiPjxkZWZzLz48Zz48dGV4dCBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGxlbmd0aEFkanVzdD0ic3BhY2luZyIgdGV4dExlbmd0aD0iMTUyLjkxOTkiIHg9IjMwNC41MDgzIiB5PSIzMi45OTUxIj5NYW5hZ2VyIHByb2Nlc3NlczwvdGV4dD48ZWxsaXBzZSBjeD0iMzY4LjE0ODIiIGN5PSI1Ny4yOTY5IiBmaWxsPSIjMjIyMjIyIiByeD0iMTAiIHJ5PSIxMCIgc3R5bGU9InN0cm9rZTojMjIyMjIyO3N0cm9rZS13aWR0aDoxLjA7Ii8+PHJlY3QgZmlsbD0ibm9uZSIgaGVpZ2h0PSIyNTUuNjAxNiIgc3R5bGU9InN0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoxLjU7IiB3aWR0aD0iNTU3LjgwNDciIHg9IjE4LjUyMzIiIHk9IjEyMS4yOTY5Ii8+PHBhdGggZD0iTTY5LjMwNjQsMTIxLjI5NjkgTDY5LjMwNjQsMTMwLjU5MzggTDU5LjMwNjQsMTQwLjU5MzggTDE4LjUyMzIsMTQwLjU5MzggIiBmaWxsPSJub25lIiBzdHlsZT0ic3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjEuNTsiLz48dGV4dCBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nIiB0ZXh0TGVuZ3RoPSI0MC43ODMyIiB4PSIyMS41MjMyIiB5PSIxMzUuMjkyIj5TdGVwMTwvdGV4dD48cmVjdCBmaWxsPSIjRjFGMUYxIiBoZWlnaHQ9IjMzLjk2ODgiIHJ4PSIxMi41IiByeT0iMTIuNSIgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDowLjU7IiB3aWR0aD0iMTY3LjA5OTYiIHg9IjI4NC41OTg0IiB5PSIxNTcuNTkzOCIvPjx0ZXh0IGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBsZW5ndGhBZGp1c3Q9InNwYWNpbmciIHRleHRMZW5ndGg9IjE0Ny4wOTk2IiB4PSIyOTQuNTk4NCIgeT0iMTc4LjczMjQiPmdlbmVyYXRlIHJlZmVyZW5jZSBwYXRoPC90ZXh0PjxyZWN0IGZpbGw9IiNGMUYxRjEiIGhlaWdodD0iMzMuOTY4OCIgcng9IjEyLjUiIHJ5PSIxMi41IiBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjAuNTsiIHdpZHRoPSIxNTYuMzc3IiB4PSIyODkuOTU5NyIgeT0iMjExLjU2MjUiLz48dGV4dCBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nIiB0ZXh0TGVuZ3RoPSIxMzYuMzc3IiB4PSIyOTkuOTU5NyIgeT0iMjMyLjcwMTIiPnNldCBsYXRlc3QgcGxhbm5lciBkYXRhPC90ZXh0PjxyZWN0IGZpbGw9IiNGMUYxRjEiIGhlaWdodD0iMzMuOTY4OCIgcng9IjEyLjUiIHJ5PSIxMi41IiBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjAuNTsiIHdpZHRoPSIzOTYuMzU5NCIgeD0iMTY5Ljk2ODUiIHk9IjI2NS41MzEzIi8+PHRleHQgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGxlbmd0aEFkanVzdD0ic3BhY2luZyIgdGV4dExlbmd0aD0iMzcuOTgwNSIgeD0iMTc5Ljk2ODUiIHk9IjI4Ni42Njk5Ij5ydW4gYWxsPC90ZXh0Pjx0ZXh0IGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBmb250LXdlaWdodD0iYm9sZCIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nIiB0ZXh0TGVuZ3RoPSIxMjUuNDQzNCIgeD0iMjIxLjc2MzQiIHk9IjI4Ni42Njk5Ij5hcHByb3ZlZCBtb2R1bGVzPC90ZXh0Pjx0ZXh0IGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBsZW5ndGhBZGp1c3Q9InNwYWNpbmciIHRleHRMZW5ndGg9IjIwNS4zMDY2IiB4PSIzNTEuMDIxMiIgeT0iMjg2LjY2OTkiPmFuZCBnZXQgYXBwcm92ZWQgbW9kdWxlcyBvdXRwdXQ8L3RleHQ+PHBhdGggZD0iTTI4LjUyMzIsMzA5LjUgTDI4LjUyMzIsMzY0Ljg5ODQgQTAsMCAwIDAgMCAyOC41MjMyLDM2NC44OTg0IEwyNjMuMTIxOCwzNjQuODk4NCBBMCwwIDAgMCAwIDI2My4xMjE4LDM2NC44OTg0IEwyNjMuMTIxOCwzNDEuMTk5MiBMMjgzLjEyMTgsMzM3LjE5OTIgTDI2My4xMjE4LDMzMy4xOTkyIEwyNjMuMTIxOCwzMTkuNSBMMjUzLjEyMTgsMzA5LjUgTDI4LjUyMzIsMzA5LjUgQTAsMCAwIDAgMCAyOC41MjMyLDMwOS41ICIgZmlsbD0iI0ZBRkFGQSIgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDowLjU7Ii8+PHBhdGggZD0iTTI1My4xMjE4LDMwOS41IEwyNTMuMTIxOCwzMTkuNSBMMjYzLjEyMTgsMzE5LjUgTDI1My4xMjE4LDMwOS41ICIgZmlsbD0iI0ZBRkFGQSIgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDowLjU7Ii8+PHRleHQgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTMiIGxlbmd0aEFkanVzdD0ic3BhY2luZyIgdGV4dExlbmd0aD0iMjEzLjU5ODYiIHg9IjM0LjUyMzIiIHk9IjMyNi41NjY5Ij5yZW1vdmUgbW9kdWxlcyB3aG9zZSBzdGF0dXMgaXM8L3RleHQ+PHRleHQgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSJib2xkIiBsZW5ndGhBZGp1c3Q9InNwYWNpbmciIHRleHRMZW5ndGg9IjE3OC4yNjEyIiB4PSIzNC41MjMyIiB5PSIzNDEuNjk5NyI+TW9kdWxlU3RhdHVzOjpTVUNDRVNTPC90ZXh0Pjx0ZXh0IGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjEzIiBsZW5ndGhBZGp1c3Q9InNwYWNpbmciIHRleHRMZW5ndGg9IjEzLjI5ODMiIHg9IjIxNi45MTY3IiB5PSIzNDEuNjk5NyI+b3I8L3RleHQ+PHRleHQgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSJib2xkIiBsZW5ndGhBZGp1c3Q9InNwYWNpbmciIHRleHRMZW5ndGg9IjE3My4xNjQxIiB4PSIzNC41MjMyIiB5PSIzNTYuODMyNSI+TW9kdWxlU3RhdHVzOjpGQUlMVVJFPC90ZXh0PjxyZWN0IGZpbGw9IiNGMUYxRjEiIGhlaWdodD0iMzMuOTY4OCIgcng9IjEyLjUiIHJ5PSIxMi41IiBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjAuNTsiIHdpZHRoPSIxNzAuMDUyNyIgeD0iMjgzLjEyMTgiIHk9IjMyMC4yMTQ4Ii8+PHRleHQgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGxlbmd0aEFkanVzdD0ic3BhY2luZyIgdGV4dExlbmd0aD0iMTUwLjA1MjciIHg9IjI5My4xMjE4IiB5PSIzNDEuMzUzNSI+cmVtb3ZlIGV4cGlyZWQgbW9kdWxlczwvdGV4dD48cmVjdCBmaWxsPSJub25lIiBoZWlnaHQ9IjEzNi4yMzQ0IiBzdHlsZT0ic3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjEuNTsiIHdpZHRoPSI0MTAuNjc1OCIgeD0iMTYyLjgxMDMiIHk9IjM4Ni44OTg0Ii8+PHBhdGggZD0iTTIxMy41OTM1LDM4Ni44OTg0IEwyMTMuNTkzNSwzOTYuMTk1MyBMMjAzLjU5MzUsNDA2LjE5NTMgTDE2Mi44MTAzLDQwNi4xOTUzICIgZmlsbD0ibm9uZSIgc3R5bGU9InN0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoxLjU7Ii8+PHRleHQgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIGxlbmd0aEFkanVzdD0ic3BhY2luZyIgdGV4dExlbmd0aD0iNDAuNzgzMiIgeD0iMTY1LjgxMDMiIHk9IjQwMC44OTM2Ij5TdGVwMjwvdGV4dD48cmVjdCBmaWxsPSIjRjFGMUYxIiBoZWlnaHQ9IjMzLjk2ODgiIHJ4PSIxMi41IiByeT0iMTIuNSIgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDowLjU7IiB3aWR0aD0iMzkwLjY3NTgiIHg9IjE3Mi44MTAzIiB5PSI0MjMuMTk1MyIvPjx0ZXh0IGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBsZW5ndGhBZGp1c3Q9InNwYWNpbmciIHRleHRMZW5ndGg9IjM3MC42NzU4IiB4PSIxODIuODEwMyIgeT0iNDQ0LjMzNCI+c2V0IGFwcHJvdmVkIG1vZHVsZXMgb3V0cHV0IHRvIGFsbCByZWdpc3RlcmVkIHNjZW5lIG1vZHVsZXM8L3RleHQ+PHJlY3QgZmlsbD0iI0YxRjFGMSIgaGVpZ2h0PSIzMy45Njg4IiByeD0iMTIuNSIgcnk9IjEyLjUiIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MC41OyIgd2lkdGg9IjM0OC44OTg0IiB4PSIxOTMuNjk5IiB5PSI0NzcuMTY0MSIvPjx0ZXh0IGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBsZW5ndGhBZGp1c3Q9InNwYWNpbmciIHRleHRMZW5ndGg9IjMyOC44OTg0IiB4PSIyMDMuNjk5IiB5PSI0OTguMzAyNyI+Y2hlY2sgd2hpY2ggc2NlbmUgbW9kdWxlIG1ha2VzIGEgZXhlY3V0aW9uIHJlcXVlc3Q8L3RleHQ+PHJlY3QgZmlsbD0ibm9uZSIgaGVpZ2h0PSIxNDMuODMyIiBzdHlsZT0ic3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjEuNTsiIHdpZHRoPSIyOTYuMzIwNiIgeD0iMjg0Ljk1OCIgeT0iNTMzLjEzMjgiLz48cGF0aCBkPSJNMzM1Ljc0MTIsNTMzLjEzMjggTDMzNS43NDEyLDU0Mi40Mjk3IEwzMjUuNzQxMiw1NTIuNDI5NyBMMjg0Ljk1OCw1NTIuNDI5NyAiIGZpbGw9Im5vbmUiIHN0eWxlPSJzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MS41OyIvPjx0ZXh0IGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBsZW5ndGhBZGp1c3Q9InNwYWNpbmciIHRleHRMZW5ndGg9IjQwLjc4MzIiIHg9IjI4Ny45NTgiIHk9IjU0Ny4xMjc5Ij5TdGVwMzwvdGV4dD48cGF0aCBkPSJNMzk5LjE0ODIsNjE3LjgzMiBMMzk5LjE0ODIsNjI2LjM5ODQgTDM3OS4xNDgyLDYzMC4zOTg0IEwzOTkuMTQ4Miw2MzQuMzk4NCBMMzk5LjE0ODIsNjQyLjk2NDggQTAsMCAwIDAgMCAzOTkuMTQ4Miw2NDIuOTY0OCBMNTQ5LjI3ODYsNjQyLjk2NDggQTAsMCAwIDAgMCA1NDkuMjc4Niw2NDIuOTY0OCBMNTQ5LjI3ODYsNjI3LjgzMiBMNTM5LjI3ODYsNjE3LjgzMiBMMzk5LjE0ODIsNjE3LjgzMiBBMCwwIDAgMCAwIDM5OS4xNDgyLDYxNy44MzIgIiBmaWxsPSIjRkFGQUZBIiBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjAuNTsiLz48cGF0aCBkPSJNNTM5LjI3ODYsNjE3LjgzMiBMNTM5LjI3ODYsNjI3LjgzMiBMNTQ5LjI3ODYsNjI3LjgzMiBMNTM5LjI3ODYsNjE3LjgzMiAiIGZpbGw9IiNGQUZBRkEiIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MC41OyIvPjx0ZXh0IGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjEzIiBsZW5ndGhBZGp1c3Q9InNwYWNpbmciIHRleHRMZW5ndGg9IjEyOS4xMzA0IiB4PSI0MDUuMTQ4MiIgeT0iNjM0Ljg5ODkiPmJyZWFrIGZyb20gdGhlIGxvb3A8L3RleHQ+PGVsbGlwc2UgY3g9IjM2OC4xNDgyIiBjeT0iNjMwLjM5ODQiIGZpbGw9Im5vbmUiIHJ4PSIxMSIgcnk9IjExIiBzdHlsZT0ic3Ryb2tlOiMyMjIyMjI7c3Ryb2tlLXdpZHRoOjEuMDsiLz48ZWxsaXBzZSBjeD0iMzY4LjE0ODIiIGN5PSI2MzAuMzk4NCIgZmlsbD0iIzIyMjIyMiIgcng9IjYiIHJ5PSI2IiBzdHlsZT0ic3Ryb2tlOiMyMjIyMjI7c3Ryb2tlLXdpZHRoOjEuMDsiLz48cG9seWdvbiBmaWxsPSIjRjFGMUYxIiBwb2ludHM9IjMwNi45NTgsNTY5LjQyOTcsNDI5LjMzODQsNTY5LjQyOTcsNDQxLjMzODQsNTgxLjQyOTcsNDI5LjMzODQsNTkzLjQyOTcsMzA2Ljk1OCw1OTMuNDI5NywyOTQuOTU4LDU4MS40Mjk3LDMwNi45NTgsNTY5LjQyOTciIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MC41OyIvPjx0ZXh0IGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjExIiBsZW5ndGhBZGp1c3Q9InNwYWNpbmciIHRleHRMZW5ndGg9IjE2Ljg4NjciIHg9IjM3Mi4xNDgyIiB5PSI2MDMuNjQwMSI+Tk88L3RleHQ+PHRleHQgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGxlbmd0aEFkanVzdD0ic3BhY2luZyIgdGV4dExlbmd0aD0iMTIyLjM4MDQiIHg9IjMwNi45NTgiIHk9IjU4NS4yMzc4Ij5yZXF1ZXN0IG1vZHVsZXMgZXhpc3Q8L3RleHQ+PHRleHQgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGxlbmd0aEFkanVzdD0ic3BhY2luZyIgdGV4dExlbmd0aD0iMjkuMzYzOCIgeD0iNDQxLjMzODQiIHk9IjU3OC44MzU0Ij5UUlVFPC90ZXh0PjxyZWN0IGZpbGw9Im5vbmUiIGhlaWdodD0iMTM2LjIzNDQiIHN0eWxlPSJzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MS41OyIgd2lkdGg9IjM2NS41MzUyIiB4PSIxODUuMzgwNiIgeT0iNjg2Ljk2NDgiLz48cGF0aCBkPSJNMjM2LjE2MzgsNjg2Ljk2NDggTDIzNi4xNjM4LDY5Ni4yNjE3IEwyMjYuMTYzOCw3MDYuMjYxNyBMMTg1LjM4MDYsNzA2LjI2MTcgIiBmaWxsPSJub25lIiBzdHlsZT0ic3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjEuNTsiLz48dGV4dCBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nIiB0ZXh0TGVuZ3RoPSI0MC43ODMyIiB4PSIxODguMzgwNiIgeT0iNzAwLjk2Ij5TdGVwNDwvdGV4dD48cmVjdCBmaWxsPSIjRjFGMUYxIiBoZWlnaHQ9IjMzLjk2ODgiIHJ4PSIxMi41IiByeT0iMTIuNSIgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDowLjU7IiB3aWR0aD0iMzQ1LjUzNTIiIHg9IjE5NS4zODA2IiB5PSI3MjMuMjYxNyIvPjx0ZXh0IGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBsZW5ndGhBZGp1c3Q9InNwYWNpbmciIHRleHRMZW5ndGg9IjM1LjY1NDMiIHg9IjIwNS4zODA2IiB5PSI3NDQuNDAwNCI+c2VsZWN0PC90ZXh0Pjx0ZXh0IGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBmb250LXdlaWdodD0iYm9sZCIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nIiB0ZXh0TGVuZ3RoPSIxNDkuMzMyIiB4PSIyNDQuODQ5NCIgeT0iNzQ0LjQwMDQiPm5ldyBjYW5kaWRhdGUgbW9kdWxlczwvdGV4dD48dGV4dCBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nIiB0ZXh0TGVuZ3RoPSIxMzIuOTE5OSIgeD0iMzk3Ljk5NTgiIHk9Ijc0NC40MDA0Ij5mcm9tIHJlcXVlc3QgbW9kdWxlczwvdGV4dD48cmVjdCBmaWxsPSIjRjFGMUYxIiBoZWlnaHQ9IjMzLjk2ODgiIHJ4PSIxMi41IiByeT0iMTIuNSIgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDowLjU7IiB3aWR0aD0iMTc2LjM5ODQiIHg9IjI3OS45NDkiIHk9Ijc3Ny4yMzA1Ii8+PHRleHQgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGxlbmd0aEFkanVzdD0ic3BhY2luZyIgdGV4dExlbmd0aD0iMTU2LjM5ODQiIHg9IjI4OS45NDkiIHk9Ijc5OC4zNjkxIj5ydW4gYWxsIGNhbmRpZGF0ZSBtb2R1bGVzPC90ZXh0PjxyZWN0IGZpbGw9Im5vbmUiIGhlaWdodD0iODIuMjY1NiIgc3R5bGU9InN0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoxLjU7IiB3aWR0aD0iNDc0LjgwNjYiIHg9IjEzMC43NDQ5IiB5PSI4MzMuMTk5MiIvPjxwYXRoIGQ9Ik0xODEuNTI4MSw4MzMuMTk5MiBMMTgxLjUyODEsODQyLjQ5NjEgTDE3MS41MjgxLDg1Mi40OTYxIEwxMzAuNzQ0OSw4NTIuNDk2MSAiIGZpbGw9Im5vbmUiIHN0eWxlPSJzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MS41OyIvPjx0ZXh0IGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBsZW5ndGhBZGp1c3Q9InNwYWNpbmciIHRleHRMZW5ndGg9IjQwLjc4MzIiIHg9IjEzMy43NDQ5IiB5PSI4NDcuMTk0MyI+U3RlcDU8L3RleHQ+PHJlY3QgZmlsbD0iI0YxRjFGMSIgaGVpZ2h0PSIzMy45Njg4IiByeD0iMTIuNSIgcnk9IjEyLjUiIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MC41OyIgd2lkdGg9IjQ1NC44MDY2IiB4PSIxNDAuNzQ0OSIgeT0iODY5LjQ5NjEiLz48dGV4dCBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nIiB0ZXh0TGVuZ3RoPSIyNzAuMjUyIiB4PSIxNTAuNzQ0OSIgeT0iODkwLjYzNDgiPmRlY2lkZSB0aGUgcHJpb3JpdHkgb3JkZXIgb2YgZXhlY3V0aW9uIGFtb25nPC90ZXh0Pjx0ZXh0IGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBmb250LXdlaWdodD0iYm9sZCIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nIiB0ZXh0TGVuZ3RoPSIxNjAuNzQwMiIgeD0iNDI0LjgxMTMiIHk9Ijg5MC42MzQ4Ij5jYW5kaWRhdGUgbW9kdWxlcyBzdGFjazwvdGV4dD48cmVjdCBmaWxsPSJub25lIiBoZWlnaHQ9IjExNi4yNjU2IiBzdHlsZT0ic3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjEuNTsiIHdpZHRoPSI3MTUuOTM2NSIgeD0iMTEiIHk9IjkyNS40NjQ4Ii8+PHBhdGggZD0iTTYxLjc4MzIsOTI1LjQ2NDggTDYxLjc4MzIsOTM0Ljc2MTcgTDUxLjc4MzIsOTQ0Ljc2MTcgTDExLDk0NC43NjE3ICIgZmlsbD0ibm9uZSIgc3R5bGU9InN0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoxLjU7Ii8+PHRleHQgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIGxlbmd0aEFkanVzdD0ic3BhY2luZyIgdGV4dExlbmd0aD0iNDAuNzgzMiIgeD0iMTQiIHk9IjkzOS40NiI+U3RlcDY8L3RleHQ+PHBvbHlnb24gZmlsbD0iI0YxRjFGMSIgcG9pbnRzPSIyMjQuNDkwMiw5NjEuNzYxNyw1MTEuODA2Miw5NjEuNzYxNyw1MjMuODA2Miw5NzMuNzYxNyw1MTEuODA2Miw5ODUuNzYxNywyMjQuNDkwMiw5ODUuNzYxNywyMTIuNDkwMiw5NzMuNzYxNywyMjQuNDkwMiw5NjEuNzYxNyIgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDowLjU7Ii8+PHRleHQgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGxlbmd0aEFkanVzdD0ic3BhY2luZyIgdGV4dExlbmd0aD0iMjg3LjMxNTkiIHg9IjIyNC40OTAyIiB5PSI5NzcuNTY5OCI+YXBwcm92ZWQgbW9kdWxlIGV4aXN0cyBpbiBjYW5kaWRhdGUgbW9kdWxlcyBzdGFjazwvdGV4dD48dGV4dCBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nIiB0ZXh0TGVuZ3RoPSIyOS4zNjM4IiB4PSIxODMuMTI2NSIgeT0iOTcxLjE2NzUiPlRSVUU8L3RleHQ+PHRleHQgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGxlbmd0aEFkanVzdD0ic3BhY2luZyIgdGV4dExlbmd0aD0iMTYuODg2NyIgeD0iNTIzLjgwNjIiIHk9Ijk3MS4xNjc1Ij5OTzwvdGV4dD48cmVjdCBmaWxsPSIjRjFGMUYxIiBoZWlnaHQ9IjMzLjk2ODgiIHJ4PSIxMi41IiByeT0iMTIuNSIgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDowLjU7IiB3aWR0aD0iMzQyLjk4MDUiIHg9IjMxIiB5PSI5OTUuNzYxNyIvPjx0ZXh0IGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBsZW5ndGhBZGp1c3Q9InNwYWNpbmciIHRleHRMZW5ndGg9IjMzLjUxNTYiIHg9IjQxIiB5PSIxMDE2LjkwMDQiPm1vdmU8L3RleHQ+PHRleHQgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSJib2xkIiBsZW5ndGhBZGp1c3Q9InNwYWNpbmciIHRleHRMZW5ndGg9IjExOC4zMDA4IiB4PSI3OC4zMzAxIiB5PSIxMDE2LjkwMDQiPmFwcHJvdmVkIG1vZHVsZTwvdGV4dD48dGV4dCBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nIiB0ZXh0TGVuZ3RoPSIxNjMuNTM1MiIgeD0iMjAwLjQ0NTMiIHk9IjEwMTYuOTAwNCI+dG8gYXBwcm92ZWQgbW9kdWxlcyBzdGFjazwvdGV4dD48cGF0aCBkPSJNNTY0LjgwNjIsOTk1Ljc2MTcgTDU2NC44MDYyLDEwMDQuMzI4MSBMNTQ0LjgwNjIsMTAwOC4zMjgxIEw1NjQuODA2MiwxMDEyLjMyODEgTDU2NC44MDYyLDEwMjAuODk0NSBBMCwwIDAgMCAwIDU2NC44MDYyLDEwMjAuODk0NSBMNzE0LjkzNjUsMTAyMC44OTQ1IEEwLDAgMCAwIDAgNzE0LjkzNjUsMTAyMC44OTQ1IEw3MTQuOTM2NSwxMDA1Ljc2MTcgTDcwNC45MzY1LDk5NS43NjE3IEw1NjQuODA2Miw5OTUuNzYxNyBBMCwwIDAgMCAwIDU2NC44MDYyLDk5NS43NjE3ICIgZmlsbD0iI0ZBRkFGQSIgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDowLjU7Ii8+PHBhdGggZD0iTTcwNC45MzY1LDk5NS43NjE3IEw3MDQuOTM2NSwxMDA1Ljc2MTcgTDcxNC45MzY1LDEwMDUuNzYxNyBMNzA0LjkzNjUsOTk1Ljc2MTcgIiBmaWxsPSIjRkFGQUZBIiBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjAuNTsiLz48dGV4dCBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMyIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nIiB0ZXh0TGVuZ3RoPSIxMjkuMTMwNCIgeD0iNTcwLjgwNjIiIHk9IjEwMTIuODI4NiI+YnJlYWsgZnJvbSB0aGUgbG9vcDwvdGV4dD48ZWxsaXBzZSBjeD0iNTMzLjgwNjIiIGN5PSIxMDA4LjMyODEiIGZpbGw9Im5vbmUiIHJ4PSIxMSIgcnk9IjExIiBzdHlsZT0ic3Ryb2tlOiMyMjIyMjI7c3Ryb2tlLXdpZHRoOjEuMDsiLz48ZWxsaXBzZSBjeD0iNTMzLjgwNjIiIGN5PSIxMDA4LjMyODEiIGZpbGw9IiMyMjIyMjIiIHJ4PSI2IiByeT0iNiIgc3R5bGU9InN0cm9rZTojMjIyMjIyO3N0cm9rZS13aWR0aDoxLjA7Ii8+PHBvbHlnb24gZmlsbD0iI0YxRjFGMSIgcG9pbnRzPSIzNjguMTQ4Miw4Ny4yOTY5LDM2OC4xNDgyLDg3LjI5NjksMzgwLjE0ODIsOTkuMjk2OSwzNjguMTQ4MiwxMTEuMjk2OSwzNjguMTQ4MiwxMTEuMjk2OSwzNTYuMTQ4Miw5OS4yOTY5LDM2OC4xNDgyLDg3LjI5NjkiIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MC41OyIvPjxsaW5lIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MS4wOyIgeDE9IjM2OC4xNDgyIiB4Mj0iMzY4LjE0ODIiIHkxPSIxOTEuNTYyNSIgeTI9IjIxMS41NjI1Ii8+PHBvbHlnb24gZmlsbD0iIzE4MTgxOCIgcG9pbnRzPSIzNjQuMTQ4MiwyMDEuNTYyNSwzNjguMTQ4MiwyMTEuNTYyNSwzNzIuMTQ4MiwyMDEuNTYyNSwzNjguMTQ4MiwyMDUuNTYyNSIgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDoxLjA7Ii8+PGxpbmUgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDoxLjA7IiB4MT0iMzY4LjE0ODIiIHgyPSIzNjguMTQ4MiIgeTE9IjI0NS41MzEzIiB5Mj0iMjY1LjUzMTMiLz48cG9seWdvbiBmaWxsPSIjMTgxODE4IiBwb2ludHM9IjM2NC4xNDgyLDI1NS41MzEzLDM2OC4xNDgyLDI2NS41MzEzLDM3Mi4xNDgyLDI1NS41MzEzLDM2OC4xNDgyLDI1OS41MzEzIiBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjEuMDsiLz48bGluZSBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjEuMDsiIHgxPSIzNjguMTQ4MiIgeDI9IjM2OC4xNDgyIiB5MT0iMjk5LjUiIHkyPSIzMjAuMjE0OCIvPjxwb2x5Z29uIGZpbGw9IiMxODE4MTgiIHBvaW50cz0iMzY0LjE0ODIsMzEwLjIxNDgsMzY4LjE0ODIsMzIwLjIxNDgsMzcyLjE0ODIsMzEwLjIxNDgsMzY4LjE0ODIsMzE0LjIxNDgiIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MS4wOyIvPjxsaW5lIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MS4wOyIgeDE9IjM2OC4xNDgyIiB4Mj0iMzY4LjE0ODIiIHkxPSI0NTcuMTY0MSIgeTI9IjQ3Ny4xNjQxIi8+PHBvbHlnb24gZmlsbD0iIzE4MTgxOCIgcG9pbnRzPSIzNjQuMTQ4Miw0NjcuMTY0MSwzNjguMTQ4Miw0NzcuMTY0MSwzNzIuMTQ4Miw0NjcuMTY0MSwzNjguMTQ4Miw0NzEuMTY0MSIgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDoxLjA7Ii8+PGxpbmUgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDoxLjA7IiB4MT0iMzY4LjE0ODIiIHgyPSIzNjguMTQ4MiIgeTE9IjM1NC4xODM2IiB5Mj0iNDIzLjE5NTMiLz48cG9seWdvbiBmaWxsPSIjMTgxODE4IiBwb2ludHM9IjM2NC4xNDgyLDQxMy4xOTUzLDM2OC4xNDgyLDQyMy4xOTUzLDM3Mi4xNDgyLDQxMy4xOTUzLDM2OC4xNDgyLDQxNy4xOTUzIiBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjEuMDsiLz48bGluZSBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjEuMDsiIHgxPSIzNjguMTQ4MiIgeDI9IjM2OC4xNDgyIiB5MT0iNTkzLjQyOTciIHkyPSI2MTkuMzk4NCIvPjxwb2x5Z29uIGZpbGw9IiMxODE4MTgiIHBvaW50cz0iMzY0LjE0ODIsNjA5LjM5ODQsMzY4LjE0ODIsNjE5LjM5ODQsMzcyLjE0ODIsNjA5LjM5ODQsMzY4LjE0ODIsNjEzLjM5ODQiIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MS4wOyIvPjxsaW5lIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MS4wOyIgeDE9IjQ0MS4zMzg0IiB4Mj0iNTU5LjI3ODYiIHkxPSI1ODEuNDI5NyIgeTI9IjU4MS40Mjk3Ii8+PHBvbHlnb24gZmlsbD0iIzE4MTgxOCIgcG9pbnRzPSI1NTUuMjc4Niw2MTcuMzk4NCw1NTkuMjc4Niw2MjcuMzk4NCw1NjMuMjc4Niw2MTcuMzk4NCw1NTkuMjc4Niw2MjEuMzk4NCIgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDoxLjA7Ii8+PGxpbmUgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDoxLjA7IiB4MT0iNTU5LjI3ODYiIHgyPSI1NTkuMjc4NiIgeTE9IjU4MS40Mjk3IiB5Mj0iNjY0Ljk2NDgiLz48bGluZSBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjEuMDsiIHgxPSI1NTkuMjc4NiIgeDI9IjM2OC4xNDgyIiB5MT0iNjY0Ljk2NDgiIHkyPSI2NjQuOTY0OCIvPjxsaW5lIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MS4wOyIgeDE9IjM2OC4xNDgyIiB4Mj0iMzY4LjE0ODIiIHkxPSI2NjQuOTY0OCIgeTI9IjcyMy4yNjE3Ii8+PHBvbHlnb24gZmlsbD0iIzE4MTgxOCIgcG9pbnRzPSIzNjQuMTQ4Miw3MTMuMjYxNywzNjguMTQ4Miw3MjMuMjYxNywzNzIuMTQ4Miw3MTMuMjYxNywzNjguMTQ4Miw3MTcuMjYxNyIgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDoxLjA7Ii8+PGxpbmUgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDoxLjA7IiB4MT0iMzY4LjE0ODIiIHgyPSIzNjguMTQ4MiIgeTE9IjUxMS4xMzI4IiB5Mj0iNTY5LjQyOTciLz48cG9seWdvbiBmaWxsPSIjMTgxODE4IiBwb2ludHM9IjM2NC4xNDgyLDU1OS40Mjk3LDM2OC4xNDgyLDU2OS40Mjk3LDM3Mi4xNDgyLDU1OS40Mjk3LDM2OC4xNDgyLDU2My40Mjk3IiBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjEuMDsiLz48bGluZSBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjEuMDsiIHgxPSIzNjguMTQ4MiIgeDI9IjM2OC4xNDgyIiB5MT0iNzU3LjIzMDUiIHkyPSI3NzcuMjMwNSIvPjxwb2x5Z29uIGZpbGw9IiMxODE4MTgiIHBvaW50cz0iMzY0LjE0ODIsNzY3LjIzMDUsMzY4LjE0ODIsNzc3LjIzMDUsMzcyLjE0ODIsNzY3LjIzMDUsMzY4LjE0ODIsNzcxLjIzMDUiIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MS4wOyIvPjxsaW5lIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MS4wOyIgeDE9IjM2OC4xNDgyIiB4Mj0iMzY4LjE0ODIiIHkxPSI4MTEuMTk5MiIgeTI9Ijg2OS40OTYxIi8+PHBvbHlnb24gZmlsbD0iIzE4MTgxOCIgcG9pbnRzPSIzNjQuMTQ4Miw4NTkuNDk2MSwzNjguMTQ4Miw4NjkuNDk2MSwzNzIuMTQ4Miw4NTkuNDk2MSwzNjguMTQ4Miw4NjMuNDk2MSIgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDoxLjA7Ii8+PGxpbmUgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDoxLjA7IiB4MT0iMjEyLjQ5MDIiIHgyPSIyMDIuNDkwMiIgeTE9Ijk3My43NjE3IiB5Mj0iOTczLjc2MTciLz48bGluZSBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjEuMDsiIHgxPSIyMDIuNDkwMiIgeDI9IjIwMi40OTAyIiB5MT0iOTczLjc2MTciIHkyPSI5OTUuNzYxNyIvPjxwb2x5Z29uIGZpbGw9IiMxODE4MTgiIHBvaW50cz0iMTk4LjQ5MDIsOTg1Ljc2MTcsMjAyLjQ5MDIsOTk1Ljc2MTcsMjA2LjQ5MDIsOTg1Ljc2MTcsMjAyLjQ5MDIsOTg5Ljc2MTciIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MS4wOyIvPjxsaW5lIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MS4wOyIgeDE9IjUyMy44MDYyIiB4Mj0iNTMzLjgwNjIiIHkxPSI5NzMuNzYxNyIgeTI9Ijk3My43NjE3Ii8+PGxpbmUgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDoxLjA7IiB4MT0iNTMzLjgwNjIiIHgyPSI1MzMuODA2MiIgeTE9Ijk3My43NjE3IiB5Mj0iOTk3LjMyODEiLz48cG9seWdvbiBmaWxsPSIjMTgxODE4IiBwb2ludHM9IjUyOS44MDYyLDk4Ny4zMjgxLDUzMy44MDYyLDk5Ny4zMjgxLDUzNy44MDYyLDk4Ny4zMjgxLDUzMy44MDYyLDk5MS4zMjgxIiBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjEuMDsiLz48bGluZSBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjEuMDsiIHgxPSIyMDIuNDkwMiIgeDI9IjIwMi40OTAyIiB5MT0iMTAyOS43MzA1IiB5Mj0iMTAzNC43MzA1Ii8+PGxpbmUgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDoxLjA7IiB4MT0iMjAyLjQ5MDIiIHgyPSI3MzguOTM2NSIgeTE9IjEwMzQuNzMwNSIgeTI9IjEwMzQuNzMwNSIvPjxwb2x5Z29uIGZpbGw9IiMxODE4MTgiIHBvaW50cz0iNzM0LjkzNjUsNTYzLjcxNDgsNzM4LjkzNjUsNTUzLjcxNDgsNzQyLjkzNjUsNTYzLjcxNDgsNzM4LjkzNjUsNTU5LjcxNDgiIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MS4wOyIvPjxsaW5lIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MS4wOyIgeDE9IjczOC45MzY1IiB4Mj0iNzM4LjkzNjUiIHkxPSI5OS4yOTY5IiB5Mj0iMTAzNC43MzA1Ii8+PGxpbmUgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDoxLjA7IiB4MT0iNzM4LjkzNjUiIHgyPSIzODAuMTQ4MiIgeTE9Ijk5LjI5NjkiIHkyPSI5OS4yOTY5Ii8+PHBvbHlnb24gZmlsbD0iIzE4MTgxOCIgcG9pbnRzPSIzOTAuMTQ4Miw5NS4yOTY5LDM4MC4xNDgyLDk5LjI5NjksMzkwLjE0ODIsMTAzLjI5NjksMzg2LjE0ODIsOTkuMjk2OSIgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDoxLjA7Ii8+PGxpbmUgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDoxLjA7IiB4MT0iMzY4LjE0ODIiIHgyPSIzNjguMTQ4MiIgeTE9IjkwMy40NjQ4IiB5Mj0iOTYxLjc2MTciLz48cG9seWdvbiBmaWxsPSIjMTgxODE4IiBwb2ludHM9IjM2NC4xNDgyLDk1MS43NjE3LDM2OC4xNDgyLDk2MS43NjE3LDM3Mi4xNDgyLDk1MS43NjE3LDM2OC4xNDgyLDk1NS43NjE3IiBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjEuMDsiLz48bGluZSBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjEuMDsiIHgxPSIzNjguMTQ4MiIgeDI9IjM2OC4xNDgyIiB5MT0iMTExLjI5NjkiIHkyPSIxNTcuNTkzOCIvPjxwb2x5Z29uIGZpbGw9IiMxODE4MTgiIHBvaW50cz0iMzY0LjE0ODIsMTQ3LjU5MzgsMzY4LjE0ODIsMTU3LjU5MzgsMzcyLjE0ODIsMTQ3LjU5MzgsMzY4LjE0ODIsMTUxLjU5MzgiIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MS4wOyIvPjxsaW5lIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MS4wOyIgeDE9IjM2OC4xNDgyIiB4Mj0iMzY4LjE0ODIiIHkxPSI2Ny4yOTY5IiB5Mj0iODcuMjk2OSIvPjxwb2x5Z29uIGZpbGw9IiMxODE4MTgiIHBvaW50cz0iMzY0LjE0ODIsNzcuMjk2OSwzNjguMTQ4Miw4Ny4yOTY5LDM3Mi4xNDgyLDc3LjI5NjksMzY4LjE0ODIsODEuMjk2OSIgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDoxLjA7Ii8+PCEtLVNSQz1bZkxERFJ6RDA1QnBsaHRaN241OEZLRTNXSTRYTGJLZjg1QUljRUk0RXN6c25sU2Z3ci1tLWFvMzRWLVZQQVZib1UtOVlNUHh0Q0pEbGQzU2tUM2hmYmplT2VjYklSNDZTVWdYeUcybWd0Tmotbjh2bGxBajNZeTFhdjg1cUtYS1l1eHA0ZXNBYnNCNDd0VWtXUW9KZ0taSjg2TGNmcDNlOWxjc1N1QkV2S1o5N1licUNqNjlxUi1ZdEFjaTQ5Q3NXWDBlOW1PMHdwU3IyYkhjb0c5M0NyN2FUZjhvaVBZcjh3V0RmeHdhZVQyVmhWaUFBRGpqeHZBOFc3SXBMcWRlOUtVb3Z3dGJlSG9pME9UVXZUQ0dOUWoydGJfSFN5UXpwc3lHQzRaTlNQdDlQNVNOellBcDZCc012TWpfVUJiU2hNSHhKMUJveC1WSHZfUjBpMldMWERrbkdWb3dUVTNpdWFMeWRKSG43bUdjcm90OEtBU1hvN1hvdmJ3UTFzR1hKUHZlcFo1Z3phSmJRdkNCcXV5UTQ3eHN1a2Zab2sxT1VoZmV6NW5uOE8yVFJ2eUdEMGlxVTd6UkJrTzhOSHNQVmxpeGJvQjdSTXZUU3RSMXdJajBSZ1lIY0dtRnZBRjExa1JvdVFoaHR0THdfWHM0dlFpMk1aOXBIc0k0Tm55a0VDby11ZFFIWHFsQTJtRlYzOFdsWkI0UHNOTjhuRVZ1Ylh4RUlocllUc0FKYlZ3YzVwY0prYTBJcEFPZU52ZF9PNnRYbm5oczE0ZnIwaG1teER4U1NxcFQ5anJXbXZFMG84a0Uwbk56Vkg1eDY3ckxUVk1rU2pHWlZocHVnMm5kVV8wSzBdLS0+PC9nPjwvc3ZnPg==" class="uml" alt="uml diagram" title=""></p>
-<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">rclcpp</span><span class="o">::</span><span class="n">ok</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="cm">/**</span>
-<span class="cm">     * STEP1: get approved modules' output</span>
-<span class="cm">     */</span>
-<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">approved_modules_output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">runApprovedModules</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
-
-<span class="w">    </span><span class="cm">/**</span>
-<span class="cm">     * STEP2: check modules that need to be launched</span>
-<span class="cm">     */</span>
-<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">request_modules</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getRequestModules</span><span class="p">(</span><span class="n">approved_modules_output</span><span class="p">);</span>
-
-<span class="w">    </span><span class="cm">/**</span>
-<span class="cm">     * STEP3: if there is no module that need to be launched, return approved modules' output</span>
-<span class="cm">     */</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">request_modules</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="n">processing_time_</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="s">"total_time"</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stop_watch_</span><span class="p">.</span><span class="n">toc</span><span class="p">(</span><span class="s">"total_time"</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span>
-<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">approved_modules_output</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="cm">/**</span>
-<span class="cm">     * STEP4: if there is module that should be launched, execute the module</span>
-<span class="cm">     */</span>
-<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="p">[</span><span class="n">highest_priority_module</span><span class="p">,</span><span class="w"> </span><span class="n">candidate_modules_output</span><span class="p">]</span><span class="w"> </span><span class="o">=</span>
-<span class="w">      </span><span class="n">runRequestModules</span><span class="p">(</span><span class="n">request_modules</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">approved_modules_output</span><span class="p">);</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">highest_priority_module</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="n">processing_time_</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="s">"total_time"</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stop_watch_</span><span class="p">.</span><span class="n">toc</span><span class="p">(</span><span class="s">"total_time"</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span>
-<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">approved_modules_output</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="cm">/**</span>
-<span class="cm">     * STEP5: if the candidate module's modification is NOT approved yet, return the result.</span>
-<span class="cm">     * NOTE: the result is output of the candidate module, but the output path don't contains path</span>
-<span class="cm">     * shape modification that needs approval. On the other hand, it could include velocity profile</span>
-<span class="cm">     * modification.</span>
-<span class="cm">     */</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">highest_priority_module</span><span class="o">-&gt;</span><span class="n">isWaitingApproval</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="n">processing_time_</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="s">"total_time"</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stop_watch_</span><span class="p">.</span><span class="n">toc</span><span class="p">(</span><span class="s">"total_time"</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span>
-<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">candidate_modules_output</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="cm">/**</span>
-<span class="cm">     * STEP6: if the candidate module is approved, push the module into approved_module_ptrs_</span>
-<span class="cm">     */</span>
-<span class="w">    </span><span class="n">addApprovedModule</span><span class="p">(</span><span class="n">highest_priority_module</span><span class="p">);</span>
-<span class="w">    </span><span class="n">clearCandidateModules</span><span class="p">();</span>
-<span class="w">  </span><span class="p">}</span>
-</code></pre></div>
-<p>Code is <a href="https://github.com/autowarefoundation/autoware.universe/blob/b1734916e3efd9786507a271e0fe829dd37476c8/planning/behavior_path_planner/src/planner_manager.cpp#L66-L111">here</a></p>
-<h2 id="priority-of-execution-request">Priority of execution request<a class="headerlink" href="#priority-of-execution-request" title="Permanent link">#</a></h2>
-<p>Compare priorities parameter among sub-managers to determine the order of execution based on config. Therefore, the priority between sub-modules does <strong>NOT</strong> change at runtime.</p>
-<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="cm">/**</span>
-<span class="cm">   * @brief swap the modules order based on it's priority.</span>
-<span class="cm">   * @param modules.</span>
-<span class="cm">   * @details for now, the priority is decided in config file and doesn't change runtime.</span>
-<span class="cm">   */</span>
-<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">sortByPriority</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">SceneModulePtr</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">modules</span><span class="p">)</span><span class="w"> </span><span class="k">const</span>
-<span class="w">  </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// TODO(someone) enhance this priority decision method.</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">modules</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">modules</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="p">[</span><span class="k">this</span><span class="p">](</span><span class="k">auto</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">getManager</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">getPriority</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">getManager</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">getPriority</span><span class="p">();</span>
-<span class="w">    </span><span class="p">});</span>
-<span class="w">  </span><span class="p">}</span>
-</code></pre></div>
-<p>Code is <a href="https://github.com/autowarefoundation/autoware.universe/blob/b1734916e3efd9786507a271e0fe829dd37476c8/planning/behavior_path_planner/include/behavior_path_planner/planner_manager.hpp#L239-L250">here</a></p>
-<p>In the future, however, we are considering having the priorities change dynamically depending on the situation in order to achieve more complex use cases.</p>
-<h2 id="how-to-decide-which-request-modules-to-run">How to decide which request modules to run?<a class="headerlink" href="#how-to-decide-which-request-modules-to-run" title="Permanent link">#</a></h2>
-<p>On this manager, it is possible that multiple scene modules may request path modification at same time. In that case, the modules to be executed as candidate module is determined in the following order.</p>
-<h3 id="step1_1">Step1<a class="headerlink" href="#step1_1" title="Permanent link">#</a></h3>
-<p>Push back the modules that make a request to <code>request_modules</code>.</p>
-<p><img alt="request_step1" src="../image/manager/request_step1.svg"></p>
-<h3 id="step2_1">Step2<a class="headerlink" href="#step2_1" title="Permanent link">#</a></h3>
-<p>Check approved modules stack, and remove non-executable modules from<code>request_modules</code> based on the following condition.</p>
-<ul>
-<li><strong>Condition A.</strong> approved module stack is empty.</li>
-<li><strong>Condition B.</strong> all modules in approved modules stack support simultaneous execution as approved module (<code>enable_simultaneous_execution_as_approved_module</code> is <code>true</code>).</li>
-<li><strong>Condition C.</strong> the request module supports simultaneous execution as approved module.</li>
-</ul>
-<p><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBjb250ZW50U3R5bGVUeXBlPSJ0ZXh0L2NzcyIgaGVpZ2h0PSIzNDFweCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSIgc3R5bGU9IndpZHRoOjQ3NXB4O2hlaWdodDozNDFweDtiYWNrZ3JvdW5kOiNGRkZGRkY7IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA0NzUgMzQxIiB3aWR0aD0iNDc1cHgiIHpvb21BbmRQYW49Im1hZ25pZnkiPjxkZWZzLz48Zz48ZWxsaXBzZSBjeD0iMjI0LjY1MjMiIGN5PSIyMCIgZmlsbD0iIzIyMjIyMiIgcng9IjEwIiByeT0iMTAiIHN0eWxlPSJzdHJva2U6IzIyMjIyMjtzdHJva2Utd2lkdGg6MS4wOyIvPjxwb2x5Z29uIGZpbGw9IiNGMUYxRjEiIHBvaW50cz0iMTYxLjg2OTYsMTQyLjQwMjMsMjg3LjQzNTEsMTQyLjQwMjMsMjk5LjQzNTEsMTU0LjQwMjMsMjg3LjQzNTEsMTY2LjQwMjMsMTYxLjg2OTYsMTY2LjQwMjMsMTQ5Ljg2OTYsMTU0LjQwMjMsMTYxLjg2OTYsMTQyLjQwMjMiIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MC41OyIvPjx0ZXh0IGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjExIiBsZW5ndGhBZGp1c3Q9InNwYWNpbmciIHRleHRMZW5ndGg9IjEyNS41NjU0IiB4PSIxNjEuODY5NiIgeT0iMTU4LjIxMDQiPkNvbmRpdGlvbiBCIGlzIHNhdGlzZmllZDwvdGV4dD48dGV4dCBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nIiB0ZXh0TGVuZ3RoPSIyMC42NTE5IiB4PSIxMjkuMjE3OCIgeT0iMTUxLjgwODEiPllFUzwvdGV4dD48dGV4dCBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nIiB0ZXh0TGVuZ3RoPSIxNi44ODY3IiB4PSIyOTkuNDM1MSIgeT0iMTUxLjgwODEiPk5PPC90ZXh0PjxyZWN0IGZpbGw9IiNGMUYxRjEiIGhlaWdodD0iMzMuOTY4OCIgcng9IjEyLjUiIHJ5PSIxMi41IiBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjAuNTsiIHdpZHRoPSIxOTQuMDcwMyIgeD0iMTEiIHk9IjIyNC44MDQ3Ii8+PHRleHQgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGxlbmd0aEFkanVzdD0ic3BhY2luZyIgdGV4dExlbmd0aD0iMTc0LjA3MDMiIHg9IjIxIiB5PSIyNDUuOTQzNCI+cmVtb3ZlIHRoZSByZXF1ZXN0IG1vZHVsZXM8L3RleHQ+PHBvbHlnb24gZmlsbD0iI0YxRjFGMSIgcG9pbnRzPSI0NS4xODUzLDE3Ni40MDIzLDE3MC44ODUsMTc2LjQwMjMsMTgyLjg4NSwxODguNDAyMywxNzAuODg1LDIwMC40MDIzLDQ1LjE4NTMsMjAwLjQwMjMsMzMuMTg1MywxODguNDAyMyw0NS4xODUzLDE3Ni40MDIzIiBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjAuNTsiLz48dGV4dCBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nIiB0ZXh0TGVuZ3RoPSIxNi44ODY3IiB4PSIxMTIuMDM1MiIgeT0iMjEwLjYxMjgiPk5PPC90ZXh0Pjx0ZXh0IGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjExIiBsZW5ndGhBZGp1c3Q9InNwYWNpbmciIHRleHRMZW5ndGg9IjEyNS42OTk3IiB4PSI0NS4xODUzIiB5PSIxOTIuMjEwNCI+Q29uZGl0aW9uIEMgaXMgc2F0aXNmaWVkPC90ZXh0Pjx0ZXh0IGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjExIiBsZW5ndGhBZGp1c3Q9InNwYWNpbmciIHRleHRMZW5ndGg9IjIwLjY1MTkiIHg9IjE4Mi44ODUiIHk9IjE4NS44MDgxIj5ZRVM8L3RleHQ+PHBvbHlnb24gZmlsbD0iI0YxRjFGMSIgcG9pbnRzPSIxMDguMDM1MiwyODMuMTc1OCwxMjAuMDM1MiwyOTUuMTc1OCwxMDguMDM1MiwzMDcuMTc1OCw5Ni4wMzUyLDI5NS4xNzU4LDEwOC4wMzUyLDI4My4xNzU4IiBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjAuNTsiLz48cmVjdCBmaWxsPSIjRjFGMUYxIiBoZWlnaHQ9IjMzLjk2ODgiIHJ4PSIxMi41IiByeT0iMTIuNSIgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDowLjU7IiB3aWR0aD0iMTg4LjM5ODQiIHg9IjI0Ny4wNzAzIiB5PSIxNzYuNDAyMyIvPjx0ZXh0IGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBsZW5ndGhBZGp1c3Q9InNwYWNpbmciIHRleHRMZW5ndGg9IjE2OC4zOTg0IiB4PSIyNTcuMDcwMyIgeT0iMTk3LjU0MSI+cmVtb3ZlIGFsbCByZXF1ZXN0IG1vZHVsZXM8L3RleHQ+PGVsbGlwc2UgY3g9IjM0MS4yNjk1IiBjeT0iMjU2LjM3MTEiIGZpbGw9Im5vbmUiIHJ4PSIxMSIgcnk9IjExIiBzdHlsZT0ic3Ryb2tlOiMyMjIyMjI7c3Ryb2tlLXdpZHRoOjEuMDsiLz48ZWxsaXBzZSBjeD0iMzQxLjI2OTUiIGN5PSIyNTYuMzcxMSIgZmlsbD0iIzIyMjIyMiIgcng9IjYiIHJ5PSI2IiBzdHlsZT0ic3Ryb2tlOiMyMjIyMjI7c3Ryb2tlLXdpZHRoOjEuMDsiLz48cG9seWdvbiBmaWxsPSIjRjFGMUYxIiBwb2ludHM9IjE2MS44ODA0LDk0LDI4Ny40MjQzLDk0LDI5OS40MjQzLDEwNiwyODcuNDI0MywxMTgsMTYxLjg4MDQsMTE4LDE0OS44ODA0LDEwNiwxNjEuODgwNCw5NCIgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDowLjU7Ii8+PHRleHQgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGxlbmd0aEFkanVzdD0ic3BhY2luZyIgdGV4dExlbmd0aD0iMTYuODg2NyIgeD0iMjI4LjY1MjMiIHk9IjEyOC4yMTA0Ij5OTzwvdGV4dD48dGV4dCBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nIiB0ZXh0TGVuZ3RoPSIxMjUuNTQzOSIgeD0iMTYxLjg4MDQiIHk9IjEwOS44MDgxIj5Db25kaXRpb24gQSBpcyBzYXRpc2ZpZWQ8L3RleHQ+PHRleHQgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGxlbmd0aEFkanVzdD0ic3BhY2luZyIgdGV4dExlbmd0aD0iMjAuNjUxOSIgeD0iMjk5LjQyNDMiIHk9IjEwMy40MDU4Ij5ZRVM8L3RleHQ+PGVsbGlwc2UgY3g9IjM0Mi4wNzYyIiBjeT0iMTA2IiBmaWxsPSJub25lIiByeD0iMTEiIHJ5PSIxMSIgc3R5bGU9InN0cm9rZTojMjIyMjIyO3N0cm9rZS13aWR0aDoxLjA7Ii8+PGVsbGlwc2UgY3g9IjM0Mi4wNzYyIiBjeT0iMTA2IiBmaWxsPSIjMjIyMjIyIiByeD0iNiIgcnk9IjYiIHN0eWxlPSJzdHJva2U6IzIyMjIyMjtzdHJva2Utd2lkdGg6MS4wOyIvPjxwb2x5Z29uIGZpbGw9IiNGMUYxRjEiIHBvaW50cz0iMjI0LjY1MjMsNTAsMjI0LjY1MjMsNTAsMjM2LjY1MjMsNjIsMjI0LjY1MjMsNzQsMjI0LjY1MjMsNzQsMjEyLjY1MjMsNjIsMjI0LjY1MjMsNTAiIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MC41OyIvPjxsaW5lIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MS4wOyIgeDE9IjEwOC4wMzUyIiB4Mj0iMTA4LjAzNTIiIHkxPSIyMDAuNDAyMyIgeTI9IjIyNC44MDQ3Ii8+PHBvbHlnb24gZmlsbD0iIzE4MTgxOCIgcG9pbnRzPSIxMDQuMDM1MiwyMTQuODA0NywxMDguMDM1MiwyMjQuODA0NywxMTIuMDM1MiwyMTQuODA0NywxMDguMDM1MiwyMTguODA0NyIgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDoxLjA7Ii8+PGxpbmUgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDoxLjA7IiB4MT0iMTgyLjg4NSIgeDI9IjIxNS4wNzAzIiB5MT0iMTg4LjQwMjMiIHkyPSIxODguNDAyMyIvPjxwb2x5Z29uIGZpbGw9IiMxODE4MTgiIHBvaW50cz0iMjExLjA3MDMsMjMxLjc4OTEsMjE1LjA3MDMsMjQxLjc4OTEsMjE5LjA3MDMsMjMxLjc4OTEsMjE1LjA3MDMsMjM1Ljc4OTEiIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MS4wOyIvPjxsaW5lIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MS4wOyIgeDE9IjIxNS4wNzAzIiB4Mj0iMjE1LjA3MDMiIHkxPSIxODguNDAyMyIgeTI9IjI5NS4xNzU4Ii8+PGxpbmUgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDoxLjA7IiB4MT0iMjE1LjA3MDMiIHgyPSIxMjAuMDM1MiIgeTE9IjI5NS4xNzU4IiB5Mj0iMjk1LjE3NTgiLz48cG9seWdvbiBmaWxsPSIjMTgxODE4IiBwb2ludHM9IjEzMC4wMzUyLDI5MS4xNzU4LDEyMC4wMzUyLDI5NS4xNzU4LDEzMC4wMzUyLDI5OS4xNzU4LDEyNi4wMzUyLDI5NS4xNzU4IiBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjEuMDsiLz48bGluZSBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjEuMDsiIHgxPSIxMDguMDM1MiIgeDI9IjEwOC4wMzUyIiB5MT0iMjU4Ljc3MzQiIHkyPSIyODMuMTc1OCIvPjxwb2x5Z29uIGZpbGw9IiMxODE4MTgiIHBvaW50cz0iMTA0LjAzNTIsMjczLjE3NTgsMTA4LjAzNTIsMjgzLjE3NTgsMTEyLjAzNTIsMjczLjE3NTgsMTA4LjAzNTIsMjc3LjE3NTgiIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MS4wOyIvPjxsaW5lIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MS4wOyIgeDE9IjM0MS4yNjk1IiB4Mj0iMzQxLjI2OTUiIHkxPSIyMTAuMzcxMSIgeTI9IjI0NS4zNzExIi8+PHBvbHlnb24gZmlsbD0iIzE4MTgxOCIgcG9pbnRzPSIzMzcuMjY5NSwyMzUuMzcxMSwzNDEuMjY5NSwyNDUuMzcxMSwzNDUuMjY5NSwyMzUuMzcxMSwzNDEuMjY5NSwyMzkuMzcxMSIgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDoxLjA7Ii8+PGxpbmUgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDoxLjA7IiB4MT0iMTQ5Ljg2OTYiIHgyPSIxMDguMDM1MiIgeTE9IjE1NC40MDIzIiB5Mj0iMTU0LjQwMjMiLz48bGluZSBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjEuMDsiIHgxPSIxMDguMDM1MiIgeDI9IjEwOC4wMzUyIiB5MT0iMTU0LjQwMjMiIHkyPSIxNzYuNDAyMyIvPjxwb2x5Z29uIGZpbGw9IiMxODE4MTgiIHBvaW50cz0iMTA0LjAzNTIsMTY2LjQwMjMsMTA4LjAzNTIsMTc2LjQwMjMsMTEyLjAzNTIsMTY2LjQwMjMsMTA4LjAzNTIsMTcwLjQwMjMiIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MS4wOyIvPjxsaW5lIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MS4wOyIgeDE9IjI5OS40MzUxIiB4Mj0iMzQxLjI2OTUiIHkxPSIxNTQuNDAyMyIgeTI9IjE1NC40MDIzIi8+PGxpbmUgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDoxLjA7IiB4MT0iMzQxLjI2OTUiIHgyPSIzNDEuMjY5NSIgeTE9IjE1NC40MDIzIiB5Mj0iMTc2LjQwMjMiLz48cG9seWdvbiBmaWxsPSIjMTgxODE4IiBwb2ludHM9IjMzNy4yNjk1LDE2Ni40MDIzLDM0MS4yNjk1LDE3Ni40MDIzLDM0NS4yNjk1LDE2Ni40MDIzLDM0MS4yNjk1LDE3MC40MDIzIiBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjEuMDsiLz48bGluZSBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjEuMDsiIHgxPSIxMDguMDM1MiIgeDI9IjEwOC4wMzUyIiB5MT0iMzA3LjE3NTgiIHkyPSIzMTIuMTc1OCIvPjxsaW5lIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MS4wOyIgeDE9IjEwOC4wMzUyIiB4Mj0iNDQ5LjQ2ODgiIHkxPSIzMTIuMTc1OCIgeTI9IjMxMi4xNzU4Ii8+PHBvbHlnb24gZmlsbD0iIzE4MTgxOCIgcG9pbnRzPSI0NDUuNDY4OCwxOTUuNTg3OSw0NDkuNDY4OCwxODUuNTg3OSw0NTMuNDY4OCwxOTUuNTg3OSw0NDkuNDY4OCwxOTEuNTg3OSIgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDoxLjA7Ii8+PGxpbmUgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDoxLjA7IiB4MT0iNDQ5LjQ2ODgiIHgyPSI0NDkuNDY4OCIgeTE9IjYyIiB5Mj0iMzEyLjE3NTgiLz48bGluZSBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjEuMDsiIHgxPSI0NDkuNDY4OCIgeDI9IjIzNi42NTIzIiB5MT0iNjIiIHkyPSI2MiIvPjxwb2x5Z29uIGZpbGw9IiMxODE4MTgiIHBvaW50cz0iMjQ2LjY1MjMsNTgsMjM2LjY1MjMsNjIsMjQ2LjY1MjMsNjYsMjQyLjY1MjMsNjIiIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MS4wOyIvPjxsaW5lIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MS4wOyIgeDE9IjIyNC42NTIzIiB4Mj0iMjI0LjY1MjMiIHkxPSIxMTgiIHkyPSIxNDIuNDAyMyIvPjxwb2x5Z29uIGZpbGw9IiMxODE4MTgiIHBvaW50cz0iMjIwLjY1MjMsMTMyLjQwMjMsMjI0LjY1MjMsMTQyLjQwMjMsMjI4LjY1MjMsMTMyLjQwMjMsMjI0LjY1MjMsMTM2LjQwMjMiIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MS4wOyIvPjxsaW5lIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MS4wOyIgeDE9IjI5OS40MjQzIiB4Mj0iMzMxLjA3NjIiIHkxPSIxMDYiIHkyPSIxMDYiLz48cG9seWdvbiBmaWxsPSIjMTgxODE4IiBwb2ludHM9IjMyMS4wNzYyLDEwMiwzMzEuMDc2MiwxMDYsMzIxLjA3NjIsMTEwLDMyNS4wNzYyLDEwNiIgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDoxLjA7Ii8+PGxpbmUgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDoxLjA7IiB4MT0iMjI0LjY1MjMiIHgyPSIyMjQuNjUyMyIgeTE9Ijc0IiB5Mj0iOTQiLz48cG9seWdvbiBmaWxsPSIjMTgxODE4IiBwb2ludHM9IjIyMC42NTIzLDg0LDIyNC42NTIzLDk0LDIyOC42NTIzLDg0LDIyNC42NTIzLDg4IiBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjEuMDsiLz48bGluZSBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjEuMDsiIHgxPSIyMjQuNjUyMyIgeDI9IjIyNC42NTIzIiB5MT0iMzAiIHkyPSI1MCIvPjxwb2x5Z29uIGZpbGw9IiMxODE4MTgiIHBvaW50cz0iMjIwLjY1MjMsNDAsMjI0LjY1MjMsNTAsMjI4LjY1MjMsNDAsMjI0LjY1MjMsNDQiIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MS4wOyIvPjwhLS1TUkM9W1RQMnhKV0QxMzRMeFZ1TkJ0SThfMDE5SVk2WVg4MHIyNUFFVEV1cDVGQ0JPMnRtLWFxSEEyNGFRdHlCZE1CUnJHeWg2RFBTdnJyQWRzNmU2TXZqMVVrWHUxM1NkTS1GN2JhZFVJcU9uZGRmMS1xRUxRWlg1NGU4SGdSZE11cGpBMFd5WmFHR1VMaEx1Q1FjNWJvcEF3YW1xMkZwODViNXVVN2J1N2hqUER1SWFOTmp5Nmx6dnp6VXpLdDFyN0pwRWxjZDh6R2xSOVpUeXBiM2gzXzVwV2p1SS1nWG0wTk9mZFNGeGZWVjZoY3ZaVHBtak5nRHVaX0FzazJDRlNyRnkxRzAwXS0tPjwvZz48L3N2Zz4=" class="uml" alt="uml diagram" title=""></p>
-<p>Executable or not:</p>
-<table>
-<thead>
-<tr>
-<th align="center">Condition A</th>
-<th align="center">Condition B</th>
-<th align="center">Condition C</th>
-<th align="center">Executable as candidate modules?</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">YES</td>
-<td align="center">-</td>
-<td align="center">YES</td>
-<td align="center"><strong>YES</strong></td>
-</tr>
-<tr>
-<td align="center">YES</td>
-<td align="center">-</td>
-<td align="center">NO</td>
-<td align="center"><strong>YES</strong></td>
-</tr>
-<tr>
-<td align="center">NO</td>
-<td align="center">YES</td>
-<td align="center">YES</td>
-<td align="center"><strong>YES</strong></td>
-</tr>
-<tr>
-<td align="center">NO</td>
-<td align="center">YES</td>
-<td align="center">NO</td>
-<td align="center">NO</td>
-</tr>
-<tr>
-<td align="center">NO</td>
-<td align="center">NO</td>
-<td align="center">YES</td>
-<td align="center">NO</td>
-</tr>
-<tr>
-<td align="center">NO</td>
-<td align="center">NO</td>
-<td align="center">NO</td>
-<td align="center">NO</td>
-</tr>
-</tbody>
-</table>
-<p>If a module that doesn't support simultaneous execution exists in approved modules stack (<strong>NOT</strong> satisfy Condition B), no more modules can be added to the stack, and therefore none of the modules can be executed as candidate.</p>
-<p>For example, if approved module's setting of <code>enable_simultaneous_execution_as_approved_module</code> is <strong>ENABLE</strong>, then only modules whose the setting is <strong>ENABLE</strong> proceed to the next step.</p>
-<p><img alt="request_step2" src="../../image/manager/request_step2.drawio.svg"></p>
-<p>Other examples:</p>
-<table>
-<thead>
-<tr>
-<th align="left">Process</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><img alt="request_step2-2" src="../../image/manager/request_step2-2.drawio.svg"></td>
-<td align="left">If approved modules stack is empty, then all request modules proceed to the next step, regardless of the setting of <code>enable_simultaneous_execution_as_approved_module</code>.</td>
-</tr>
-<tr>
-<td align="left"><img alt="request_step2-3" src="../../image/manager/request_step2-3.drawio.svg"></td>
-<td align="left">If approved module's setting of <code>enable_simultaneous_execution_as_approved_module</code> is <strong>DISABLE</strong>, then all request modules are discarded.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="step3_1">Step3<a class="headerlink" href="#step3_1" title="Permanent link">#</a></h3>
-<p>Sort <code>request_modules</code> by priority.</p>
-<p><img alt="request_step3" src="../../image/manager/request_step3.drawio.svg"></p>
-<h3 id="step4_1">Step4<a class="headerlink" href="#step4_1" title="Permanent link">#</a></h3>
-<p>Check and pick up executable modules as candidate in order of priority based on the following conditions.</p>
-<ul>
-<li><strong>Condition A.</strong> candidate module stack is empty.</li>
-<li><strong>Condition B.</strong> all modules in candidate modules stack support simultaneous execution as candidate module (<code>enable_simultaneous_execution_as_candidate_module</code> is <code>true</code>).</li>
-<li><strong>Condition C.</strong> the request module supports simultaneous execution as candidate module.</li>
-</ul>
-<p><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBjb250ZW50U3R5bGVUeXBlPSJ0ZXh0L2NzcyIgaGVpZ2h0PSIzMjZweCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSIgc3R5bGU9IndpZHRoOjgyNXB4O2hlaWdodDozMjZweDtiYWNrZ3JvdW5kOiNGRkZGRkY7IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA4MjUgMzI2IiB3aWR0aD0iODI1cHgiIHpvb21BbmRQYW49Im1hZ25pZnkiPjxkZWZzLz48Zz48ZWxsaXBzZSBjeD0iMzk4LjA5NzciIGN5PSIyMCIgZmlsbD0iIzIyMjIyMiIgcng9IjEwIiByeT0iMTAiIHN0eWxlPSJzdHJva2U6IzIyMjIyMjtzdHJva2Utd2lkdGg6MS4wOyIvPjxwb2x5Z29uIGZpbGw9IiNGMUYxRjEiIHBvaW50cz0iMzM1LjMyNTcsOTQsNDYwLjg2OTYsOTQsNDcyLjg2OTYsMTA2LDQ2MC44Njk2LDExOCwzMzUuMzI1NywxMTgsMzIzLjMyNTcsMTA2LDMzNS4zMjU3LDk0IiBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjAuNTsiLz48dGV4dCBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nIiB0ZXh0TGVuZ3RoPSIxMjUuNTQzOSIgeD0iMzM1LjMyNTciIHk9IjEwOS44MDgxIj5Db25kaXRpb24gQSBpcyBzYXRpc2ZpZWQ8L3RleHQ+PHRleHQgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGxlbmd0aEFkanVzdD0ic3BhY2luZyIgdGV4dExlbmd0aD0iMjAuNjUxOSIgeD0iMzAyLjY3MzgiIHk9IjEwMy40MDU4Ij5ZRVM8L3RleHQ+PHRleHQgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGxlbmd0aEFkanVzdD0ic3BhY2luZyIgdGV4dExlbmd0aD0iMTYuODg2NyIgeD0iNDcyLjg2OTYiIHk9IjEwMy40MDU4Ij5OTzwvdGV4dD48cmVjdCBmaWxsPSIjRjFGMUYxIiBoZWlnaHQ9IjMzLjk2ODgiIHJ4PSIxMi41IiByeT0iMTIuNSIgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDowLjU7IiB3aWR0aD0iMzY3LjA5NzciIHg9IjExIiB5PSIxMjgiLz48dGV4dCBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nIiB0ZXh0TGVuZ3RoPSIzNDcuMDk3NyIgeD0iMjEiIHk9IjE0OS4xMzg3Ij5wdXNoIGJhY2sgdGhlIHJlcXVlc3QgbW9kdWxlIHRvIGNhbmRpZGF0ZSBtb2R1bGUgc3RhY2s8L3RleHQ+PHJlY3QgZmlsbD0iI0YxRjFGMSIgaGVpZ2h0PSIzMy45Njg4IiByeD0iMTIuNSIgcnk9IjEyLjUiIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MC41OyIgd2lkdGg9IjM2Ny4wOTc3IiB4PSI0MTguMDk3NyIgeT0iMjI0LjgwNDciLz48dGV4dCBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nIiB0ZXh0TGVuZ3RoPSIzNDcuMDk3NyIgeD0iNDI4LjA5NzciIHk9IjI0NS45NDM0Ij5wdXNoIGJhY2sgdGhlIHJlcXVlc3QgbW9kdWxlIHRvIGNhbmRpZGF0ZSBtb2R1bGUgc3RhY2s8L3RleHQ+PHBvbHlnb24gZmlsbD0iI0YxRjFGMSIgcG9pbnRzPSI1MzguNzk2NiwxNzYuNDAyMyw2NjQuNDk2MywxNzYuNDAyMyw2NzYuNDk2MywxODguNDAyMyw2NjQuNDk2MywyMDAuNDAyMyw1MzguNzk2NiwyMDAuNDAyMyw1MjYuNzk2NiwxODguNDAyMyw1MzguNzk2NiwxNzYuNDAyMyIgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDowLjU7Ii8+PHRleHQgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGxlbmd0aEFkanVzdD0ic3BhY2luZyIgdGV4dExlbmd0aD0iMjAuNjUxOSIgeD0iNjA1LjY0NjUiIHk9IjIxMC42MTI4Ij5ZRVM8L3RleHQ+PHRleHQgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGxlbmd0aEFkanVzdD0ic3BhY2luZyIgdGV4dExlbmd0aD0iMTI1LjY5OTciIHg9IjUzOC43OTY2IiB5PSIxOTIuMjEwNCI+Q29uZGl0aW9uIEMgaXMgc2F0aXNmaWVkPC90ZXh0Pjx0ZXh0IGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjExIiBsZW5ndGhBZGp1c3Q9InNwYWNpbmciIHRleHRMZW5ndGg9IjE2Ljg4NjciIHg9IjY3Ni40OTYzIiB5PSIxODUuODA4MSI+Tk88L3RleHQ+PGVsbGlwc2UgY3g9IjcxNS4zODMxIiBjeT0iMTg4LjQwMjMiIGZpbGw9Im5vbmUiIHJ4PSIxMSIgcnk9IjExIiBzdHlsZT0ic3Ryb2tlOiMyMjIyMjI7c3Ryb2tlLXdpZHRoOjEuMDsiLz48ZWxsaXBzZSBjeD0iNzE1LjM4MzEiIGN5PSIxODguNDAyMyIgZmlsbD0iIzIyMjIyMiIgcng9IjYiIHJ5PSI2IiBzdHlsZT0ic3Ryb2tlOiMyMjIyMjI7c3Ryb2tlLXdpZHRoOjEuMDsiLz48cG9seWdvbiBmaWxsPSIjRjFGMUYxIiBwb2ludHM9IjUzOC44NjM4LDEyOCw2NjQuNDI5MiwxMjgsNjc2LjQyOTIsMTQwLDY2NC40MjkyLDE1Miw1MzguODYzOCwxNTIsNTI2Ljg2MzgsMTQwLDUzOC44NjM4LDEyOCIgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDowLjU7Ii8+PHRleHQgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGxlbmd0aEFkanVzdD0ic3BhY2luZyIgdGV4dExlbmd0aD0iMjAuNjUxOSIgeD0iNjA1LjY0NjUiIHk9IjE2Mi4yMTA0Ij5ZRVM8L3RleHQ+PHRleHQgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGxlbmd0aEFkanVzdD0ic3BhY2luZyIgdGV4dExlbmd0aD0iMTI1LjU2NTQiIHg9IjUzOC44NjM4IiB5PSIxNDMuODA4MSI+Q29uZGl0aW9uIEIgaXMgc2F0aXNmaWVkPC90ZXh0Pjx0ZXh0IGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjExIiBsZW5ndGhBZGp1c3Q9InNwYWNpbmciIHRleHRMZW5ndGg9IjE2Ljg4NjciIHg9IjY3Ni40MjkyIiB5PSIxMzcuNDA1OCI+Tk88L3RleHQ+PGVsbGlwc2UgY3g9IjcxNS4zMTU5IiBjeT0iMTQwIiBmaWxsPSJub25lIiByeD0iMTEiIHJ5PSIxMSIgc3R5bGU9InN0cm9rZTojMjIyMjIyO3N0cm9rZS13aWR0aDoxLjA7Ii8+PGVsbGlwc2UgY3g9IjcxNS4zMTU5IiBjeT0iMTQwIiBmaWxsPSIjMjIyMjIyIiByeD0iNiIgcnk9IjYiIHN0eWxlPSJzdHJva2U6IzIyMjIyMjtzdHJva2Utd2lkdGg6MS4wOyIvPjxwb2x5Z29uIGZpbGw9IiNGMUYxRjEiIHBvaW50cz0iMzk4LjA5NzcsMjY4Ljc3MzQsNDEwLjA5NzcsMjgwLjc3MzQsMzk4LjA5NzcsMjkyLjc3MzQsMzg2LjA5NzcsMjgwLjc3MzQsMzk4LjA5NzcsMjY4Ljc3MzQiIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MC41OyIvPjxwb2x5Z29uIGZpbGw9IiNGMUYxRjEiIHBvaW50cz0iMzk4LjA5NzcsNTAsMzk4LjA5NzcsNTAsNDEwLjA5NzcsNjIsMzk4LjA5NzcsNzQsMzk4LjA5NzcsNzQsMzg2LjA5NzcsNjIsMzk4LjA5NzcsNTAiIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MC41OyIvPjxsaW5lIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MS4wOyIgeDE9IjYwMS42NDY1IiB4Mj0iNjAxLjY0NjUiIHkxPSIyMDAuNDAyMyIgeTI9IjIyNC44MDQ3Ii8+PHBvbHlnb24gZmlsbD0iIzE4MTgxOCIgcG9pbnRzPSI1OTcuNjQ2NSwyMTQuODA0Nyw2MDEuNjQ2NSwyMjQuODA0Nyw2MDUuNjQ2NSwyMTQuODA0Nyw2MDEuNjQ2NSwyMTguODA0NyIgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDoxLjA7Ii8+PGxpbmUgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDoxLjA7IiB4MT0iNjc2LjQ5NjMiIHgyPSI3MDQuMzgzMSIgeTE9IjE4OC40MDIzIiB5Mj0iMTg4LjQwMjMiLz48cG9seWdvbiBmaWxsPSIjMTgxODE4IiBwb2ludHM9IjY5NC4zODMxLDE4NC40MDIzLDcwNC4zODMxLDE4OC40MDIzLDY5NC4zODMxLDE5Mi40MDIzLDY5OC4zODMxLDE4OC40MDIzIiBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjEuMDsiLz48bGluZSBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjEuMDsiIHgxPSI2MDEuNjQ2NSIgeDI9IjYwMS42NDY1IiB5MT0iMjU4Ljc3MzQiIHkyPSIyODAuNzczNCIvPjxsaW5lIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MS4wOyIgeDE9IjYwMS42NDY1IiB4Mj0iNDEwLjA5NzciIHkxPSIyODAuNzczNCIgeTI9IjI4MC43NzM0Ii8+PHBvbHlnb24gZmlsbD0iIzE4MTgxOCIgcG9pbnRzPSI0MjAuMDk3NywyNzYuNzczNCw0MTAuMDk3NywyODAuNzczNCw0MjAuMDk3NywyODQuNzczNCw0MTYuMDk3NywyODAuNzczNCIgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDoxLjA7Ii8+PGxpbmUgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDoxLjA7IiB4MT0iNjAxLjY0NjUiIHgyPSI2MDEuNjQ2NSIgeTE9IjE1MiIgeTI9IjE3Ni40MDIzIi8+PHBvbHlnb24gZmlsbD0iIzE4MTgxOCIgcG9pbnRzPSI1OTcuNjQ2NSwxNjYuNDAyMyw2MDEuNjQ2NSwxNzYuNDAyMyw2MDUuNjQ2NSwxNjYuNDAyMyw2MDEuNjQ2NSwxNzAuNDAyMyIgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDoxLjA7Ii8+PGxpbmUgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDoxLjA7IiB4MT0iNjc2LjQyOTIiIHgyPSI3MDQuMzE1OSIgeTE9IjE0MCIgeTI9IjE0MCIvPjxwb2x5Z29uIGZpbGw9IiMxODE4MTgiIHBvaW50cz0iNjk0LjMxNTksMTM2LDcwNC4zMTU5LDE0MCw2OTQuMzE1OSwxNDQsNjk4LjMxNTksMTQwIiBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjEuMDsiLz48bGluZSBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjEuMDsiIHgxPSIzMjMuMzI1NyIgeDI9IjE5NC41NDg4IiB5MT0iMTA2IiB5Mj0iMTA2Ii8+PGxpbmUgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDoxLjA7IiB4MT0iMTk0LjU0ODgiIHgyPSIxOTQuNTQ4OCIgeTE9IjEwNiIgeTI9IjEyOCIvPjxwb2x5Z29uIGZpbGw9IiMxODE4MTgiIHBvaW50cz0iMTkwLjU0ODgsMTE4LDE5NC41NDg4LDEyOCwxOTguNTQ4OCwxMTgsMTk0LjU0ODgsMTIyIiBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjEuMDsiLz48bGluZSBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjEuMDsiIHgxPSI0NzIuODY5NiIgeDI9IjYwMS42NDY1IiB5MT0iMTA2IiB5Mj0iMTA2Ii8+PGxpbmUgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDoxLjA7IiB4MT0iNjAxLjY0NjUiIHgyPSI2MDEuNjQ2NSIgeTE9IjEwNiIgeTI9IjEyOCIvPjxwb2x5Z29uIGZpbGw9IiMxODE4MTgiIHBvaW50cz0iNTk3LjY0NjUsMTE4LDYwMS42NDY1LDEyOCw2MDUuNjQ2NSwxMTgsNjAxLjY0NjUsMTIyIiBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjEuMDsiLz48bGluZSBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjEuMDsiIHgxPSIxOTQuNTQ4OCIgeDI9IjE5NC41NDg4IiB5MT0iMTYxLjk2ODgiIHkyPSIyODAuNzczNCIvPjxsaW5lIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MS4wOyIgeDE9IjE5NC41NDg4IiB4Mj0iMzg2LjA5NzciIHkxPSIyODAuNzczNCIgeTI9IjI4MC43NzM0Ii8+PHBvbHlnb24gZmlsbD0iIzE4MTgxOCIgcG9pbnRzPSIzNzYuMDk3NywyNzYuNzczNCwzODYuMDk3NywyODAuNzczNCwzNzYuMDk3NywyODQuNzczNCwzODAuMDk3NywyODAuNzczNCIgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDoxLjA7Ii8+PGxpbmUgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDoxLjA7IiB4MT0iMzk4LjA5NzciIHgyPSIzOTguMDk3NyIgeTE9Ijc0IiB5Mj0iOTQiLz48cG9seWdvbiBmaWxsPSIjMTgxODE4IiBwb2ludHM9IjM5NC4wOTc3LDg0LDM5OC4wOTc3LDk0LDQwMi4wOTc3LDg0LDM5OC4wOTc3LDg4IiBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjEuMDsiLz48bGluZSBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjEuMDsiIHgxPSIzOTguMDk3NyIgeDI9IjM5OC4wOTc3IiB5MT0iMjkyLjc3MzQiIHkyPSIzMDIuNzczNCIvPjxsaW5lIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MS4wOyIgeDE9IjM5OC4wOTc3IiB4Mj0iNzk5LjE5NTMiIHkxPSIzMDIuNzczNCIgeTI9IjMwMi43NzM0Ii8+PHBvbHlnb24gZmlsbD0iIzE4MTgxOCIgcG9pbnRzPSI3OTUuMTk1MywyMTMuNzg5MSw3OTkuMTk1MywyMDMuNzg5MSw4MDMuMTk1MywyMTMuNzg5MSw3OTkuMTk1MywyMDkuNzg5MSIgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDoxLjA7Ii8+PGxpbmUgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDoxLjA7IiB4MT0iNzk5LjE5NTMiIHgyPSI3OTkuMTk1MyIgeTE9IjYyIiB5Mj0iMzAyLjc3MzQiLz48bGluZSBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjEuMDsiIHgxPSI3OTkuMTk1MyIgeDI9IjQxMC4wOTc3IiB5MT0iNjIiIHkyPSI2MiIvPjxwb2x5Z29uIGZpbGw9IiMxODE4MTgiIHBvaW50cz0iNDIwLjA5NzcsNTgsNDEwLjA5NzcsNjIsNDIwLjA5NzcsNjYsNDE2LjA5NzcsNjIiIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MS4wOyIvPjxsaW5lIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MS4wOyIgeDE9IjM5OC4wOTc3IiB4Mj0iMzk4LjA5NzciIHkxPSIzMCIgeTI9IjUwIi8+PHBvbHlnb24gZmlsbD0iIzE4MTgxOCIgcG9pbnRzPSIzOTQuMDk3Nyw0MCwzOTguMDk3Nyw1MCw0MDIuMDk3Nyw0MCwzOTguMDk3Nyw0NCIgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDoxLjA7Ii8+PCEtLVNSQz1bakwyblFhQ24zRHByNUhoVjZfODNCSEpJcUJLVGNnTUszQXVqci1CdnNRLU1KRmh2TEc4OUlJMVpicGl1N05VN1BFQW9rRVBjZDZrZkZoS3c0c2hoMTdBLTE4Z2tQenRJaHd1cFZ2VVBZZzh0ZTdSWEFiTmZzZjhmQWUyZVFxUnhuOWJtNjA0dXVoMmY5UjFvQlJYNjVYSWRCOTRmWkFZOTJXdVZCLXlaRjJuVDRkdXZGbnJLUkZKSklUSTZYY3ZITWo0eEltYkV3UUhQYnZ5VVdSOU9yVWxSVURGclZCX2hzaFp2cnI2WVRHNG9MeG1aN2w1MG53VjF3WkRuMjVIc2dvUzhQNmRmM20wMF0tLT48L2c+PC9zdmc+" class="uml" alt="uml diagram" title=""></p>
-<p>Executable or not:</p>
-<table>
-<thead>
-<tr>
-<th align="center">Condition A</th>
-<th align="center">Condition B</th>
-<th align="center">Condition C</th>
-<th align="center">Executable as candidate modules?</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">YES</td>
-<td align="center">-</td>
-<td align="center">YES</td>
-<td align="center"><strong>YES</strong></td>
-</tr>
-<tr>
-<td align="center">YES</td>
-<td align="center">-</td>
-<td align="center">NO</td>
-<td align="center"><strong>YES</strong></td>
-</tr>
-<tr>
-<td align="center">NO</td>
-<td align="center">YES</td>
-<td align="center">YES</td>
-<td align="center"><strong>YES</strong></td>
-</tr>
-<tr>
-<td align="center">NO</td>
-<td align="center">YES</td>
-<td align="center">NO</td>
-<td align="center">NO</td>
-</tr>
-<tr>
-<td align="center">NO</td>
-<td align="center">NO</td>
-<td align="center">YES</td>
-<td align="center">NO</td>
-</tr>
-<tr>
-<td align="center">NO</td>
-<td align="center">NO</td>
-<td align="center">NO</td>
-<td align="center">NO</td>
-</tr>
-</tbody>
-</table>
-<p>For example, if the highest priority module's setting of <code>enable_simultaneous_execution_as_candidate_module</code> is <strong>DISABLE</strong>, then all modules after the second priority are discarded.</p>
-<p><img alt="request_step4" src="../../image/manager/request_step4.drawio.svg"></p>
-<p>Other examples:</p>
-<table>
-<thead>
-<tr>
-<th align="left">Process</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><img alt="request_step4-2" src="../../image/manager/request_step4-2.drawio.svg"></td>
-<td align="left">If a module with a higher priority exists, lower priority modules whose setting of <code>enable_simultaneous_execution_as_candidate_module</code> is <strong>DISABLE</strong> are discarded.</td>
-</tr>
-<tr>
-<td align="left"><img alt="request_step4-3" src="../../image/manager/request_step4-3.drawio.svg"></td>
-<td align="left">If all modules' setting of <code>enable_simultaneous_execution_as_candidate_module</code> is <strong>ENABLE</strong>, then all modules proceed to the next step.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="step5_1">Step5<a class="headerlink" href="#step5_1" title="Permanent link">#</a></h3>
-<p>Run all candidate modules.</p>
-<p><img alt="request_step5" src="../../image/manager/request_step5.drawio.svg"></p>
-<h2 id="how-to-decide-which-modules-output-to-use">How to decide which module's output to use?<a class="headerlink" href="#how-to-decide-which-modules-output-to-use" title="Permanent link">#</a></h2>
-<p>Sometimes, multiple candidate modules are running simultaneously.</p>
-<p><img alt="multiple_candidates" src="../../image/manager/multiple_candidates.drawio.svg"></p>
-<p>In this case, the manager selects a candidate modules which output path is used as <code>behavior_path_planner</code> output by approval condition in the following rules.</p>
-<ul>
-<li><strong>Rule A.</strong> Regardless of the priority in the sub-manager (<code>priority</code>), approved modules always have a higher priority than unapproved modules.</li>
-<li><strong>Rule B.</strong> If the approval status is the same, sort according to the sub-manager's priority.</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th align="center">Module A's approval condition</th>
-<th align="center">Module A's priority</th>
-<th align="center">Module B's approval condition</th>
-<th align="center">Module B's priority</th>
-<th align="center">Final priority</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">Approved</td>
-<td align="center">1</td>
-<td align="center">Approved</td>
-<td align="center">99</td>
-<td align="center">Module A &gt; Module B</td>
-</tr>
-<tr>
-<td align="center">Approved</td>
-<td align="center">1</td>
-<td align="center">Not approved</td>
-<td align="center">99</td>
-<td align="center">Module A &gt; Module B</td>
-</tr>
-<tr>
-<td align="center">Not approved</td>
-<td align="center">1</td>
-<td align="center">Approved</td>
-<td align="center">99</td>
-<td align="center"><strong>Module B &gt; Module A</strong></td>
-</tr>
-<tr>
-<td align="center">Not approved</td>
-<td align="center">1</td>
-<td align="center">Not approved</td>
-<td align="center">99</td>
-<td align="center">Module A &gt; Module B</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The smaller the number is, the higher the priority is.</p>
-</div>
-<figure>
-<p><img alt="module_select" src="../../image/manager/module_select.drawio.svg" width="1000">
-  </p>
-<figcaption>module priority</figcaption>
-</figure>
-<p><img alt="output_module" src="../../image/manager/output_module.drawio.svg"></p>
-<p>Additionally, the manager moves the highest priority module to approved modules stack if it is already approved.</p>
-<h2 id="scene-module-unregister-process">Scene module unregister process<a class="headerlink" href="#scene-module-unregister-process" title="Permanent link">#</a></h2>
-<p>The manager removes expired module in approved modules stack based on the module's status.</p>
-<h3 id="waiting-approval-modules">Waiting approval modules<a class="headerlink" href="#waiting-approval-modules" title="Permanent link">#</a></h3>
-<p>If one module requests multiple path changes, the module may be back to waiting approval condition again. In this case, the manager moves the module to candidate modules stack. If there are some modules that was pushed back to approved modules stack later than the waiting approved module, it is also removed from approved modules stack.</p>
-<p>This is because module C is planning output path with the output of module B as input, and if module B is removed from approved modules stack and the input of module C changes, the output path of module C may also change greatly, and the output path will be unstable.</p>
-<p>As a result, the module A's output is used as approved modules stack.</p>
-<p><img alt="waiting_approve" src="../../image/manager/waiting_approve.drawio.svg"></p>
-<p>If this case happened in the slot, <code>is_upstream_waiting_approved</code> is set to true.</p>
-<h3 id="failure-modules">Failure modules<a class="headerlink" href="#failure-modules" title="Permanent link">#</a></h3>
-<p>The failure modules return the status <code>ModuleStatus::FAILURE</code>. The manager removes the module from approved modules stack as well as waiting approval modules, but the failure module is not moved to candidate modules stack.</p>
-<p>As a result, the module A's output is used as approved modules stack.</p>
-<p><img alt="failure_modules" src="../../image/manager/failure_modules.drawio.svg"></p>
-<p>If this case happened in the slot, <code>is_upstream_failed_approved</code> is set to true.</p>
-<h3 id="succeeded-modules">Succeeded modules<a class="headerlink" href="#succeeded-modules" title="Permanent link">#</a></h3>
-<p>The succeeded modules return the status <code>ModuleStatus::SUCCESS</code>. The manager removes those modules based on <strong>Last In First Out</strong> policy. In other words, if a module added later to approved modules stack is still running (is in <code>ModuleStatus::RUNNING</code>), the manager doesn't remove the succeeded module. The reason for this is the same as in removal for waiting approval modules, and is to prevent sudden changes of the running module's output.</p>
-<p><img alt="success_modules_remove" src="../../image/manager/success_modules_remove.drawio.svg"></p>
-<p><img alt="success_modules_skip" src="../../image/manager/success_modules_skip.drawio.svg"></p>
-<p>As an exception, if <strong>Lane Change</strong> module returns status <code>ModuleStatus::SUCCESS</code>, the manager doesn't remove any modules until all modules is in status <code>ModuleStatus::SUCCESS</code>. This is because when the manager removes the <strong>Lane Change</strong> (normal LC, external LC, avoidance by LC) module as succeeded module, the manager updates the information of the lane Ego is currently driving in, so root reference path (= module A's input path) changes significantly at that moment.</p>
-<p><img alt="lane_change_remove" src="../../image/manager/lane_change_remove.drawio.svg"></p>
-<p><img alt="lane_change_skip" src="../../image/manager/lane_change_skip.drawio.svg"></p>
-<p>When the manager removes succeeded modules, the last added module's output is used as approved modules stack.</p>
-<h2 id="slot-output-propagation">Slot output propagation<a class="headerlink" href="#slot-output-propagation" title="Permanent link">#</a></h2>
-<p>As the initial solution, following <em>SlotOutput</em> is passed to the first slot.</p>
-<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="n">SlotOutput</span><span class="w"> </span><span class="n">result_output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SlotOutput</span><span class="p">{</span>
-<span class="w">    </span><span class="n">getReferencePath</span><span class="p">(</span><span class="n">data</span><span class="p">),</span>
-<span class="w">    </span><span class="nb">false</span><span class="p">,</span>
-<span class="w">    </span><span class="nb">false</span><span class="p">,</span>
-<span class="w">    </span><span class="nb">false</span><span class="p">,</span>
-<span class="w">  </span><span class="p">};</span>
-</code></pre></div>
-<p>If a slot turned out to be <code>is_upstream_failed_approved</code>, then all the subsequent slots are refreshed and have all of their approved_modules and candidate_modules cleared. The valid_output is just transferred to the end without any modification.</p>
-<p>If a slot turned out to be <code>is_upstream_waiting_approved</code>, then all the subsequent slots clear their candidate_modules once and apply their approved_modules to obtain the slot output.</p>
-<p>If a slot turned out to be <code>is_upstream_candidate_exclusive</code>, it means that a not <code>simultaneously_executable_as_candidate</code> module is running in that slot. Then all the subsequent modules just apply their approved_modules without trying to launch new candidate_modules.</p>
-<h2 id="reference-path-generation">Reference path generation<a class="headerlink" href="#reference-path-generation" title="Permanent link">#</a></h2>
-<p>The reference path is generated from the centerline of the <strong>lanelet sequence</strong> obtained from the <strong>current route lanelet</strong>, and it is not only used as an input to the first added module of approved modules stack, but also used as the output of <code>behavior_path_planner</code> if none of the modules are running.</p>
-<figure>
-<p><img alt="root_generation" src="../../image/manager/root_generation.svg" width="500">
-  </p>
-<figcaption>root reference path generation</figcaption>
-</figure>
-<p>The <strong>current route lanelet</strong> keeps track of the route lanelet currently followed by the planner.
-It is initialized as the closest lanelet within the route.
-It is then updated as ego travels along the route such that (1) it follows the previous <strong>current route lanelet</strong> and (2) it is the closest lanelet within the route.</p>
-<p>The <strong>current route lanelet</strong> can be reset to the closest lanelet within the route, ignoring whether it follows the previous <strong>current route lanelet</strong> .</p>
-<p><img alt="current_route_lanelet" src="../../image/manager/current_route_lanelet.svg"></p>
-<p>The manager needs to know the ego behavior and then generate a root reference path from the lanes that Ego should follow.</p>
-<p>For example, during autonomous driving, even if Ego moves into the next lane in order to avoid a parked vehicle, the target lanes that Ego should follow will <strong>NOT</strong> change because Ego will return to the original lane after the avoidance maneuver. Therefore, the manager does <strong>NOT</strong> reset the <strong>current route lanelet</strong>, even if the avoidance maneuver is finished.</p>
-<p><img alt="avoidance" src="../../image/manager/avoidance.svg"></p>
-<p>On the other hand, if the lane change is successful, the manager resets the <strong>current route lanelet</strong> because the lane that Ego should follow changes.</p>
-<p><img alt="lane_change" src="../../image/manager/lane_change.svg"></p>
-<p>In addition, while manually driving (i.e., either the <code>OperationModeState</code> is different from <code>AUTONOMOUS</code> or the Autoware control is not engaged), the manager resets the <strong>current route lanelet</strong> at each iteration because the ego vehicle may move to an adjacent lane regardless of the decision of the autonomous driving system.
-The only exception is when a module is already approved, allowing testing the module's behavior while manually driving.</p>
-<h2 id="drivable-area-generation">Drivable area generation<a class="headerlink" href="#drivable-area-generation" title="Permanent link">#</a></h2>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Under Construction</p>
-</div>
-<h2 id="turn-signal-management">Turn signal management<a class="headerlink" href="#turn-signal-management" title="Permanent link">#</a></h2>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Under Construction</p>
-</div></div>
+<p><img alt="road_shoulder_test" src="../road_shoulder_test_map.png"></p></div>
 
 
 
@@ -13950,7 +13113,7 @@ The only exception is when a module is already approved, allowing testing the mo
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../behavior_path_planner_limitations/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Limitations" rel="prev">
+          <a href="../../../autoware_behavior_path_planner/docs/behavior_path_planner_manager_design/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Manager design" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -13959,20 +13122,20 @@ The only exception is when a module is already approved, allowing testing the mo
                 Previous
               </span>
               <div class="md-ellipsis">
-                Limitations
+                Manager design
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../../autoware_behavior_path_planner_common/docs/behavior_path_planner_develop_maps/" class="md-footer__link md-footer__link--next" aria-label="Next: Develop purpose maps" rel="next">
+          <a href="../behavior_path_planner_drivable_area_design/" class="md-footer__link md-footer__link--next" aria-label="Next: Drivable Area design" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Develop purpose maps
+                Drivable Area design
               </div>
             </div>
             <div class="md-footer__button md-icon">
