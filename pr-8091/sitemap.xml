@@ -46,6 +46,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://autowarefoundation.github.io/autoware.universe/pr-8091/common/autoware_kalman_filter/</loc>
+         <lastmod>2024-08-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/pr-8091/common/autoware_motion_utils/</loc>
          <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
@@ -142,11 +147,6 @@
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/pr-8091/common/interpolation/</loc>
-         <lastmod>2024-08-19</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://autowarefoundation.github.io/autoware.universe/pr-8091/common/kalman_filter/</loc>
          <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
