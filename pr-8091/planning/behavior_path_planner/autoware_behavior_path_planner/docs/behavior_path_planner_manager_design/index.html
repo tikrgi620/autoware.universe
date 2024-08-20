@@ -13492,7 +13492,7 @@
 <tr>
 <td align="left">IN</td>
 <td align="left"><code>tier4_planning_msgs::srv::CooperateCommands</code></td>
-<td align="left">contains approval data for scene module's path modification. (<a href="https://github.com/autowarefoundation/autoware.universe/blob/main/planning/rtc_interface/README.md">details</a>)</td>
+<td align="left">contains approval data for scene module's path modification. (<a href="https://github.com/autowarefoundation/autoware.universe/blob/main/planning/autoware_rtc_interface/README.md">details</a>)</td>
 </tr>
 <tr>
 <td align="left">OUT</td>
@@ -13502,7 +13502,7 @@
 <tr>
 <td align="left">OUT</td>
 <td align="left"><code>tier4_planning_msgs::msg::CooperateStatus</code></td>
-<td align="left">contains RTC cooperate status. (<a href="https://github.com/autowarefoundation/autoware.universe/blob/main/planning/rtc_interface/README.md">details</a>)</td>
+<td align="left">contains RTC cooperate status. (<a href="https://github.com/autowarefoundation/autoware.universe/blob/main/planning/autoware_rtc_interface/README.md">details</a>)</td>
 </tr>
 <tr>
 <td align="left">OUT</td>
@@ -13534,7 +13534,7 @@
 <tr>
 <td align="left">candidate modules</td>
 <td align="left">Not approved</td>
-<td align="left">The candidate modules whose modified path has not been approved by <a href="https://github.com/autowarefoundation/autoware.universe/blob/main/planning/rtc_interface/README.md">RTC</a> is stored in vector <code>candidate_module_ptrs_</code> in the manager. The candidate modules stack is updated in the following order. 1. The manager selects only those modules that can be executed based on the configuration of the sub-manager whose scene module requests execution. 2. Determines the execution priority. 3. Executes them as candidate module. All of these modules receive the decided (approved) path from approved modules stack and <strong>RUN in PARALLEL</strong>. <br><img alt="candidate_modules_stack" src="../../image/manager/candidate_modules_stack.svg"></td>
+<td align="left">The candidate modules whose modified path has not been approved by <a href="https://github.com/autowarefoundation/autoware.universe/blob/main/planning/autoware_rtc_interface/README.md">RTC</a> is stored in vector <code>candidate_module_ptrs_</code> in the manager. The candidate modules stack is updated in the following order. 1. The manager selects only those modules that can be executed based on the configuration of the sub-manager whose scene module requests execution. 2. Determines the execution priority. 3. Executes them as candidate module. All of these modules receive the decided (approved) path from approved modules stack and <strong>RUN in PARALLEL</strong>. <br><img alt="candidate_modules_stack" src="../../image/manager/candidate_modules_stack.svg"></td>
 </tr>
 <tr>
 <td align="left">approved modules</td>
@@ -13638,7 +13638,7 @@
 <p>On this manager, it is possible that multiple scene modules may request path modification at same time. In that case, the modules to be executed as candidate module is determined in the following order.</p>
 <h3 id="step1_1">Step1<a class="headerlink" href="#step1_1" title="Permanent link">#</a></h3>
 <p>Push back the modules that make a request to <code>request_modules</code>.</p>
-<p><img alt="request_step1" src="../image/manager/request_step1.svg"></p>
+<p><img alt="request_step1" src="../../image/manager/request_step1.drawio.svg"></p>
 <h3 id="step2_1">Step2<a class="headerlink" href="#step2_1" title="Permanent link">#</a></h3>
 <p>Check approved modules stack, and remove non-executable modules from<code>request_modules</code> based on the following condition.</p>
 <ul>
