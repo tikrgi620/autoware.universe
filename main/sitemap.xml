@@ -1221,6 +1221,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://autowarefoundation.github.io/autoware.universe/main/sensing/autoware_pcl_extensions/</loc>
+         <lastmod>2024-08-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/main/sensing/autoware_pointcloud_preprocessor/</loc>
          <lastmod>2024-08-20</lastmod>
          <changefreq>daily</changefreq>
@@ -1327,11 +1332,6 @@
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/main/sensing/livox/autoware_livox_tag_filter/</loc>
-         <lastmod>2024-08-20</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://autowarefoundation.github.io/autoware.universe/main/sensing/tier4_pcl_extensions/</loc>
          <lastmod>2024-08-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
