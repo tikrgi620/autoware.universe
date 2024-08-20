@@ -36,7 +36,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://autowarefoundation.github.io/autoware.universe/pr-8466/common/autoware_geography_utils/</loc>
+         <lastmod>2024-08-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/pr-8466/common/autoware_grid_map_utils/</loc>
+         <lastmod>2024-08-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://autowarefoundation.github.io/autoware.universe/pr-8466/common/autoware_kalman_filter/</loc>
          <lastmod>2024-08-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -121,11 +131,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://autowarefoundation.github.io/autoware.universe/pr-8466/common/geography_utils/</loc>
-         <lastmod>2024-08-20</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/pr-8466/common/global_parameter_loader/Readme/</loc>
          <lastmod>2024-08-20</lastmod>
          <changefreq>daily</changefreq>
@@ -142,11 +147,6 @@
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/pr-8466/common/interpolation/</loc>
-         <lastmod>2024-08-20</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://autowarefoundation.github.io/autoware.universe/pr-8466/common/kalman_filter/</loc>
          <lastmod>2024-08-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1042,6 +1042,11 @@
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/pr-8466/planning/behavior_path_planner/autoware_behavior_path_planner/docs/behavior_path_planner_manager_design/</loc>
+         <lastmod>2024-08-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://autowarefoundation.github.io/autoware.universe/pr-8466/planning/behavior_path_planner/autoware_behavior_path_planner_common/docs/behavior_path_planner_develop_maps/</loc>
          <lastmod>2024-08-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
