@@ -13421,28 +13421,28 @@ Cells with No elevation value can be inpainted using the values of neighboring c
 <td>--------</td>
 <td>-------------------------------------------------------------------------------------------------------------------------</td>
 <td>-----------</td>
-<td>---------</td>
+<td>--------------------</td>
 </tr>
 <tr>
 <td>r</td>
 <td>float</td>
 <td>Rotation (intrinsic rotation, convention X-Y'-Z'') that is applied to the input point cloud before computing elevation.</td>
 <td>0</td>
-<td>N/A</td>
+<td>≥-360.0<br>≤360.0</td>
 </tr>
 <tr>
 <td>p</td>
 <td>float</td>
 <td>Rotation (intrinsic rotation, convention X-Y'-Z'') that is applied to the input point cloud before computing elevation.</td>
 <td>0</td>
-<td>N/A</td>
+<td>≥-360.0<br>≤360.0</td>
 </tr>
 <tr>
 <td>y</td>
 <td>float</td>
 <td>Rotation (intrinsic rotation, convention X-Y'-Z'') that is applied to the input point cloud before computing elevation.</td>
 <td>0</td>
-<td>N/A</td>
+<td>≥-360.0<br>≤360.0</td>
 </tr>
 </tbody>
 </table>
@@ -13537,6 +13537,41 @@ Cells with No elevation value can be inpainted using the values of neighboring c
 <td>Whether to perform downsampling or not</td>
 <td>False</td>
 <td>N/A</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>Type</td>
+<td>Description</td>
+<td>Default</td>
+<td>Range</td>
+</tr>
+<tr>
+<td>--------</td>
+<td>--------</td>
+<td>-------------------------</td>
+<td>-----------</td>
+<td>---------</td>
+</tr>
+<tr>
+<td>x</td>
+<td>float</td>
+<td>Voxel size(x) in meters</td>
+<td>0.02</td>
+<td>≥0.001</td>
+</tr>
+<tr>
+<td>y</td>
+<td>float</td>
+<td>Voxel size(y) in meters</td>
+<td>0.02</td>
+<td>≥0.001</td>
+</tr>
+<tr>
+<td>z</td>
+<td>float</td>
+<td>Voxel size(z) in meters</td>
+<td>0.02</td>
+<td>≥0.001</td>
 </tr>
 </tbody>
 </table></div>
