@@ -13163,6 +13163,19 @@
     Onnx model
   </a>
   
+    <nav class="md-nav" aria-label="Onnx model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#package-acceptable-model-generation" class="md-nav__link">
+    Package acceptable model generation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -13175,6 +13188,13 @@
         <li class="md-nav__item">
   <a href="#reference-repositories" class="md-nav__link">
     Reference repositories
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#citation" class="md-nav__link">
+    Citation
   </a>
   
 </li>
@@ -13237,7 +13257,7 @@ bicycles, etc. in a scene. This package provides a ROS2 interface for RTMDet usi
 </tr>
 <tr>
 <td><code>out/mask</code></td>
-<td><code>sensor_msgs/Image</code></td>
+<td><code>autoware_internal_msgs/SegmentationMask</code></td>
 <td>The instance segmentation mask</td>
 </tr>
 <tr>
@@ -13408,11 +13428,31 @@ bicycles, etc. in a scene. This package provides a ROS2 interface for RTMDet usi
 </table>
 <h2 id="assumptions-known-limits">Assumptions / Known limits<a class="headerlink" href="#assumptions-known-limits" title="Permanent link">#</a></h2>
 <h2 id="onnx-model">Onnx model<a class="headerlink" href="#onnx-model" title="Permanent link">#</a></h2>
+<p>A sample model is provided in <code>autoware_data</code> folder by ansible script on env preparation stage. If you cannot find the
+model, you follow instructions from the
+<a href="https://github.com/autowarefoundation/autoware/tree/main/ansible/roles/artifacts">link</a> to download the model.</p>
+<h3 id="package-acceptable-model-generation">Package acceptable model generation<a class="headerlink" href="#package-acceptable-model-generation" title="Permanent link">#</a></h3>
+<p>Users can generate their own model using official RTMDet repository. Please refer to the
+<a href="https://github.com/open-mmlab/mmdetection/tree/3.x/configs/rtmdet#rtmdet-an-empirical-study-of-designing-real-time-object-detectors">official repository</a></p>
 <h2 id="label-file">Label file<a class="headerlink" href="#label-file" title="Permanent link">#</a></h2>
+<p>A sample label file (named label.txt) and instance segmentation color map file (name color_map.csv) are also
+downloaded automatically during env preparation process.</p>
+<p>These files are used to map the class index to class name and color respectively.</p>
 <h2 id="reference-repositories">Reference repositories<a class="headerlink" href="#reference-repositories" title="Permanent link">#</a></h2>
 <ul>
 <li><a href="https://github.com/open-mmlab/mmdetection/tree/3.x/configs/rtmdet#rtmdet-an-empirical-study-of-designing-real-time-object-detectors">https://github.com/open-mmlab/mmdetection/tree/3.x/configs/rtmdet#rtmdet-an-empirical-study-of-designing-real-time-object-detectors</a></li>
-</ul></div>
+</ul>
+<h2 id="citation">Citation<a class="headerlink" href="#citation" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code>@misc{lyu2022rtmdetempiricalstudydesigning,
+title={RTMDet: An Empirical Study of Designing Real-Time Object Detectors},
+author={Chengqi Lyu and Wenwei Zhang and Haian Huang and Yue Zhou and Yudong Wang and Yanyi Liu and Shilong Zhang and Kai Chen},
+year={2022},
+eprint={2212.07784},
+archivePrefix={arXiv},
+primaryClass={cs.CV},
+url={https://arxiv.org/abs/2212.07784},
+}
+</code></pre></div></div>
 
 
 
