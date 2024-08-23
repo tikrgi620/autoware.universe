@@ -561,12 +561,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://autowarefoundation.github.io/autoware.universe/main/map/autoware_map_tf_generator/</loc>
+         <loc>https://autowarefoundation.github.io/autoware.universe/main/map/autoware_map_height_fitter/</loc>
          <lastmod>2024-08-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://autowarefoundation.github.io/autoware.universe/main/map/map_height_fitter/</loc>
+         <loc>https://autowarefoundation.github.io/autoware.universe/main/map/autoware_map_tf_generator/</loc>
          <lastmod>2024-08-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
