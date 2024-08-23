@@ -471,6 +471,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://autowarefoundation.github.io/autoware.universe/latest/localization/autoware_landmark_based_localizer/autoware_lidar_marker_localizer/</loc>
+         <lastmod>2024-08-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/latest/localization/autoware_localization_error_monitor/</loc>
          <lastmod>2024-08-23</lastmod>
          <changefreq>daily</changefreq>
