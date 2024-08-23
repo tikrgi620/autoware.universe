@@ -13289,34 +13289,39 @@ The <a href="../radius-search-2d-outlier-filter/">radius_search_2d_outlier_filte
 <tr>
 <th>Name</th>
 <th>Type</th>
-<th>Default Value</th>
 <th>Description</th>
+<th>Default</th>
+<th>Range</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>voxel_size_x</code></td>
-<td>double</td>
-<td>0.3</td>
+<td>voxel_size_x</td>
+<td>float</td>
 <td>the voxel size along x-axis [m]</td>
-</tr>
-<tr>
-<td><code>voxel_size_y</code></td>
-<td>double</td>
 <td>0.3</td>
+<td>≥0</td>
+</tr>
+<tr>
+<td>voxel_size_y</td>
+<td>float</td>
 <td>the voxel size along y-axis [m]</td>
+<td>0.3</td>
+<td>≥0</td>
 </tr>
 <tr>
-<td><code>voxel_size_z</code></td>
-<td>double</td>
-<td>0.1</td>
+<td>voxel_size_z</td>
+<td>float</td>
 <td>the voxel size along z-axis [m]</td>
+<td>0.1</td>
+<td>≥0</td>
 </tr>
 <tr>
-<td><code>voxel_points_threshold</code></td>
-<td>int</td>
-<td>2</td>
+<td>voxel_points_threshold</td>
+<td>integer</td>
 <td>the minimum number of points in each voxel</td>
+<td>2</td>
+<td>≥1</td>
 </tr>
 </tbody>
 </table>
