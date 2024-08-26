@@ -13485,6 +13485,13 @@ Please see <a href="https://github.com/tier4/tier4_autoware_msgs/blob/tier4/univ
 </thead>
 <tbody>
 <tr>
+<td>enable_differential_map_loading</td>
+<td>boolean</td>
+<td>Flag to enable loading of differential map</td>
+<td>false</td>
+<td>N/A</td>
+</tr>
+<tr>
 <td>allow_unsupported_version</td>
 <td>boolean</td>
 <td>Flag to load unsupported format_version anyway. If true, just prints warning.</td>
@@ -13510,6 +13517,34 @@ Please see <a href="https://github.com/tier4/tier4_autoware_msgs/blob/tier4/univ
 <td>string</td>
 <td>The lanelet2 map path pointing to the .osm file</td>
 <td></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>dummy_metadata.min_x</td>
+<td>float</td>
+<td>When the dynamic map loading is true and the map is a single file, this is the minimum x value of the map</td>
+<td>0.0</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>dummy_metadata.min_y</td>
+<td>float</td>
+<td>When the dynamic map loading is true and the map is a single file, this is the minimum y value of the map</td>
+<td>0.0</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>dummy_metadata.x_resolution</td>
+<td>float</td>
+<td>When the dynamic map loading is true and the map is a single file, this is the resolution of the x axis</td>
+<td>100000.0</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>dummy_metadata.y_resolution</td>
+<td>float</td>
+<td>When the dynamic map loading is true and the map is a single file, this is the resolution of the y axis</td>
+<td>100000.0</td>
 <td>N/A</td>
 </tr>
 </tbody>
