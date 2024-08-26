@@ -1226,6 +1226,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://autowarefoundation.github.io/autoware.universe/main/sensing/autoware_imu_corrector/</loc>
+         <lastmod>2024-08-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/main/sensing/autoware_pcl_extensions/</loc>
          <lastmod>2024-08-26</lastmod>
          <changefreq>daily</changefreq>
@@ -1327,11 +1332,6 @@
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/main/sensing/gnss_poser/</loc>
-         <lastmod>2024-08-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://autowarefoundation.github.io/autoware.universe/main/sensing/imu_corrector/</loc>
          <lastmod>2024-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
