@@ -13123,6 +13123,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#pose-history" class="md-nav__link">
+    Pose History
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pose-with-covariance-history" class="md-nav__link">
+    Pose With Covariance History
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -13139,6 +13153,20 @@
           <li class="md-nav__item">
   <a href="#core-parameters" class="md-nav__link">
     Core Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pose-history_1" class="md-nav__link">
+    Pose History
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pose-with-covariance-history_1" class="md-nav__link">
+    Pose With Covariance History
   </a>
   
 </li>
@@ -13182,9 +13210,11 @@
 
 <div><h1 id="tier4_localization_rviz_plugin">tier4_localization_rviz_plugin<a class="headerlink" href="#tier4_localization_rviz_plugin" title="Permanent link">#</a></h1>
 <h2 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link">#</a></h2>
-<p>This plugin can display the history of the localization obtained by ekf_localizer or ndt_scan_matching.</p>
+<p>This plugin can display the localization history obtained by ekf_localizer, ndt_scan_matching, and GNSS.
+If the uncertainty of the estimated pose is given, it can also be displayed.</p>
 <h2 id="inputs-outputs">Inputs / Outputs<a class="headerlink" href="#inputs-outputs" title="Permanent link">#</a></h2>
 <h3 id="input">Input<a class="headerlink" href="#input" title="Permanent link">#</a></h3>
+<h3 id="pose-history">Pose History<a class="headerlink" href="#pose-history" title="Permanent link">#</a></h3>
 <table>
 <thead>
 <tr>
@@ -13197,12 +13227,30 @@
 <tr>
 <td><code>input/pose</code></td>
 <td><code>geometry_msgs::msg::PoseStamped</code></td>
-<td>In input/pose, put the result of localization calculated by ekf_localizer or ndt_scan_matching</td>
+<td>In input/pose, put the result of localization calculated by ekf_localizer, ndt_scan_matching, or GNSS</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pose-with-covariance-history">Pose With Covariance History<a class="headerlink" href="#pose-with-covariance-history" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>input/pose_with_covariance</code></td>
+<td><code>geometry_msgs::msg::PoseWithCovarianceStamped</code></td>
+<td>In input/pose_with_covariance, put the result of localization calculated by ekf_localizer, ndt_scan_matching, or GNSS</td>
 </tr>
 </tbody>
 </table>
 <h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">#</a></h2>
 <h3 id="core-parameters">Core Parameters<a class="headerlink" href="#core-parameters" title="Permanent link">#</a></h3>
+<h3 id="pose-history_1">Pose History<a class="headerlink" href="#pose-history_1" title="Permanent link">#</a></h3>
 <table>
 <thead>
 <tr>
@@ -13245,16 +13293,121 @@
 </tr>
 </tbody>
 </table>
+<h3 id="pose-with-covariance-history_1">Pose With Covariance History<a class="headerlink" href="#pose-with-covariance-history_1" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>property_buffer_size_</code></td>
+<td>int</td>
+<td>100</td>
+<td>Buffer size of topic</td>
+</tr>
+<tr>
+<td><code>property_path_view_</code></td>
+<td>bool</td>
+<td>true</td>
+<td>Use path property or not</td>
+</tr>
+<tr>
+<td><code>property_shape_type_</code></td>
+<td>string</td>
+<td>Line</td>
+<td>Line or Arrow</td>
+</tr>
+<tr>
+<td><code>property_line_width_</code></td>
+<td>float</td>
+<td>0.1</td>
+<td>Width of Line property [m]</td>
+</tr>
+<tr>
+<td><code>property_line_alpha_</code></td>
+<td>float</td>
+<td>1.0</td>
+<td>Alpha of Line property</td>
+</tr>
+<tr>
+<td><code>property_line_color_</code></td>
+<td>QColor</td>
+<td>Qt::white</td>
+<td>Color of Line property</td>
+</tr>
+<tr>
+<td><code>property_arrow_shaft_length</code></td>
+<td>float</td>
+<td>0.3</td>
+<td>Shaft length of Arrow property</td>
+</tr>
+<tr>
+<td><code>property_arrow_shaft_diameter</code></td>
+<td>float</td>
+<td>0.15</td>
+<td>Shaft diameter of Arrow property</td>
+</tr>
+<tr>
+<td><code>property_arrow_head_length</code></td>
+<td>float</td>
+<td>0.2</td>
+<td>Head length of Arrow property</td>
+</tr>
+<tr>
+<td><code>property_arrow_head_diameter</code></td>
+<td>float</td>
+<td>0.3</td>
+<td>Head diameter of Arrow property</td>
+</tr>
+<tr>
+<td><code>property_arrow_alpha_</code></td>
+<td>float</td>
+<td>1.0</td>
+<td>Alpha of Arrow property</td>
+</tr>
+<tr>
+<td><code>property_arrow_color_</code></td>
+<td>QColor</td>
+<td>Qt::white</td>
+<td>Color of Arrow property</td>
+</tr>
+<tr>
+<td><code>property_sphere_scale_</code></td>
+<td>float</td>
+<td>1.0</td>
+<td>Scale of Sphere property</td>
+</tr>
+<tr>
+<td><code>property_sphere_alpha_</code></td>
+<td>float</td>
+<td>0.5</td>
+<td>Alpha of Sphere property</td>
+</tr>
+<tr>
+<td><code>property_sphere_color_</code></td>
+<td>QColor</td>
+<td>(204, 51, 204)</td>
+<td>Color of Sphere property</td>
+</tr>
+</tbody>
+</table>
 <h2 id="assumptions-known-limits">Assumptions / Known limits<a class="headerlink" href="#assumptions-known-limits" title="Permanent link">#</a></h2>
 <p>TBD.</p>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">#</a></h2>
 <ol>
 <li>Start rviz and select Add under the Displays panel.
    <img alt="select_add" src="images/select_add.png"></li>
-<li>Select tier4_localization_rviz_plugin/PoseHistory and press OK.
+<li>Select tier4_localization_rviz_plugin/PoseHistory or PoseWithCovarianceHistory. Next, press OK.
    <img alt="select_localization_plugin" src="images/select_localization_plugin.png"></li>
-<li>Enter the name of the topic where you want to view the trajectory.
+<li>Enter the name of the topic where you want to view the trajectory and the covariance.
    <img alt="select_topic_name" src="images/select_topic_name.png"></li>
+<li>You can view the trajectory and the covariance.
+   <img alt="ex_pose_with_covariance_history" src="images/ex_pose_with_covariance_history.png"></li>
 </ol></div>
 
 
