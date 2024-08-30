@@ -13206,7 +13206,7 @@
 <h2 id="role">Role<a class="headerlink" href="#role" title="Permanent link">#</a></h2>
 <p>There are cases where the ego vehicle footprint goes out of the driving lane,
 for example when taking a narrow turn with a large vehicle.
-The <code>out_of_lane</code> module adds deceleration and stop points to the ego trajectory in order to prevent collisions from occuring in these out of lane cases.</p>
+The <code>out_of_lane</code> module adds deceleration and stop points to the ego trajectory in order to prevent collisions from occurring in these out of lane cases.</p>
 <h2 id="activation">Activation<a class="headerlink" href="#activation" title="Permanent link">#</a></h2>
 <p>This module is activated if the launch parameter <code>launch_out_of_lane_module</code> is set to true.</p>
 <h2 id="inner-workings-algorithms">Inner-workings / Algorithms<a class="headerlink" href="#inner-workings-algorithms" title="Permanent link">#</a></h2>
@@ -13224,7 +13224,7 @@ We select all lanelets crossed by the trajectory linestring (sequence of traject
 <p><img alt="ego_lane" src="docs/ego_lane.png"></p>
 <p>In the debug visualization the combination of all ego lanelets is shown as a blue polygon.</p>
 <h3 id="3-out-of-lane-areas">3. Out of lane areas<a class="headerlink" href="#3-out-of-lane-areas" title="Permanent link">#</a></h3>
-<p>Next, for each trajectory point, we create the corresponding out of lane areas by substracting the ego lanelets (from step 2) from the trajectory point footprint (from step 1).
+<p>Next, for each trajectory point, we create the corresponding out of lane areas by subtracting the ego lanelets (from step 2) from the trajectory point footprint (from step 1).
 Each area is associated with the lanelets overlapped by the area and with the corresponding ego trajectory point.</p>
 <p><img alt="out_of_lane_areas" src="docs/out_of_lane_areas.png"></p>
 <p>In the debug visualization, the out of lane area polygon is connected to the corresponding trajectory point by a line.</p>
@@ -13265,7 +13265,7 @@ The color of the text is red if the collision should be avoided and green otherw
 <p>We then search for the furthest pose along the trajectory where the ego footprint stays inside of the ego lane (calculate in step 2) and constraint the search to be between the minimum stopping distance and the 1st trajectory point with a collision to avoid (as determined in the previous step).
 The search is done by moving backward along the trajectory with a distance step set by the <code>action.precision</code> parameter.</p>
 <p>We first do this search for a footprint expanded with the <code>ego.extra_..._offset</code>, <code>action.longitudinal_distance_buffer</code> and <code>action.lateral_distance_buffer</code> parameters.
-If no valid pose is found, we search again while only considering the extra offets but without considering the distance buffers.
+If no valid pose is found, we search again while only considering the extra offsets but without considering the distance buffers.
 If still no valid pose is found, we use the base ego footprint without any offset.
 In case no pose is found, we fallback to using the pose before the detected collision without caring if it is out of lane or not.</p>
 <p>Whether it is decided to slow down or stop is determined by the distance between the ego vehicle and the trajectory point to avoid.
