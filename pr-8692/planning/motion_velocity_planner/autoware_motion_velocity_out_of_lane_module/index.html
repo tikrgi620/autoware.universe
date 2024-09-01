@@ -13240,7 +13240,7 @@ Each area is associated with the lanelets overlapped by the area and with the co
 <thead>
 <tr>
 <th align="center"><code>cut_predicted_paths_beyond_red_lights = false</code></th>
-<th align="center"><code>cut_predicted_paths_beyond_red_lights = false</code></th>
+<th align="center"><code>cut_predicted_paths_beyond_red_lights = true</code></th>
 </tr>
 </thead>
 <tbody>
@@ -13275,7 +13275,7 @@ If the distance is bellow the <code>actions.stop.threshold</code>, a velocity of
 <h3 id="about-stability-of-the-stopslowdown-pose">About stability of the stop/slowdown pose<a class="headerlink" href="#about-stability-of-the-stopslowdown-pose" title="Permanent link">#</a></h3>
 <p>As the input trajectory can change significantly between iterations,
 it is expected that the decisions of this module will also change.
-To add to the stability, a stop or slowdown pose is used for a minimum duration set by the <code>action.min_duration</code> parameter.
+To make the decision more stable, a stop or slowdown pose is used for a minimum duration set by the <code>action.min_duration</code> parameter.
 If during that time a new pose closer to the ego vehicle is generated, then it replaces the previous one.
 Otherwise, the stop or slowdown pose will only be discarded after no out of lane collision is detection for the set duration.</p>
 <h2 id="module-parameters">Module Parameters<a class="headerlink" href="#module-parameters" title="Permanent link">#</a></h2>
