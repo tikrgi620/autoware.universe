@@ -13583,7 +13583,7 @@
 </ol>
 <h5 id="longitudinal-distance-of-detection-area">Longitudinal distance of detection area<a class="headerlink" href="#longitudinal-distance-of-detection-area" title="Permanent link">#</a></h5>
 <p>If the parameter <code>detection_area.static</code> is set to <code>true</code>, the module creates detection area whose longitudinal distance is <code>max_forward_distance</code>.</p>
-<p>If the parameter <code>detection_area.static</code> is set to <code>false</code>, the module creates detection area so that the ego can avoid objects with minimum lateral jerk value. Thus, the longitudinal distance is depends on lateral maximum shift length, lateral jerk constraints and current ego speed. Additionally, it has to consider the distance used for the preparation phase.</p>
+<p>If the parameter <code>detection_area.static</code> is set to <code>false</code>, the module creates a detection area so that the ego can avoid objects with minimum lateral jerk value. Thus, the longitudinal distance depends on maximum lateral shift length, lateral jerk constraints and current ego speed. Additionally, it has to consider the distance used for the preparation phase.</p>
 <div class="highlight"><pre><span></span><code><span class="p">...</span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">max_shift_length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">max</span><span class="p">(</span>
 <span class="w">      </span><span class="n">std</span><span class="o">::</span><span class="n">abs</span><span class="p">(</span><span class="n">parameters_</span><span class="o">-&gt;</span><span class="n">max_right_shift_length</span><span class="p">),</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">abs</span><span class="p">(</span><span class="n">parameters_</span><span class="o">-&gt;</span><span class="n">max_left_shift_length</span><span class="p">));</span>
@@ -14018,7 +14018,7 @@ ratio =  \frac{L_{a}}{L_{d}}
 <div class="highlight"><pre><span></span><code>ros2<span class="w"> </span>service<span class="w"> </span>call<span class="w"> </span>/planning/scenario_planning/lane_driving/behavior_planning/behavior_path_planner/config_logger<span class="w"> </span>logging_demo/srv/ConfigLogger<span class="w"> </span><span class="s2">"{logger_name: 'planning.scenario_planning.lane_driving.behavior_planning.behavior_path_planner.static_obstacle_avoidance', level: DEBUG}"</span>
 </code></pre></div>
 <h3 id="visualize-debug-markers">Visualize debug markers<a class="headerlink" href="#visualize-debug-markers" title="Permanent link">#</a></h3>
-<p>Use can enable publishing of debug markers with the following parameters.</p>
+<p>User can enable publishing of debug markers with the following parameters.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">debug</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">enable_other_objects_marker</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 <span class="w">  </span><span class="nt">enable_other_objects_info</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
