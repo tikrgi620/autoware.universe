@@ -14042,9 +14042,11 @@ ratio =  \frac{L_{a}}{L_{d}}
 <p>This module avoids static (stopped) objects and does not support dynamic (moving) objects avoidance. Dynamic objects are handled within the <a href="../autoware_behavior_path_dynamic_obstacle_avoidance_module/">dynamic obstacle avoidance module</a>.</p>
 <h4 id="what-type-class-of-object-would-it-avoid">What type (class) of object would it avoid?<a class="headerlink" href="#what-type-class-of-object-would-it-avoid" title="Permanent link">#</a></h4>
 <p>It avoids cars, trucks, buses, trailers, bicycles, motorcycles, pedestrians, and unknown objects by default. Details are in the <a href="#target-object-filtering">Target object filtering section</a>.
-The above objects are divided into vehicle type objects and non-vehicle type objects; the target object filtering would differ for vehicle types and non-vehicle types.
-- Vehicle type objects: Car, Truck, Bus, Trailer, Motorcycle
-- Non-vehicle type objects: Pedestrian, Bicycle</p>
+The above objects are divided into vehicle type objects and non-vehicle type objects; the target object filtering would differ for vehicle types and non-vehicle types.</p>
+<ul>
+<li>Vehicle type objects: Car, Truck, Bus, Trailer, Motorcycle</li>
+<li>Non-vehicle type objects: Pedestrian, Bicycle</li>
+</ul>
 <h4 id="how-does-it-judge-if-it-is-a-target-object-or-not">How does it judge if it is a target object or not?<a class="headerlink" href="#how-does-it-judge-if-it-is-a-target-object-or-not" title="Permanent link">#</a></h4>
 <p>The conditions for vehicle type objects and non-vehicle type objects are different. However, the main idea is that static objects on road shoulders within the planned path would be avoided.
 Below are some examples when an avoidance path is generated for vehicle type objects.</p>
