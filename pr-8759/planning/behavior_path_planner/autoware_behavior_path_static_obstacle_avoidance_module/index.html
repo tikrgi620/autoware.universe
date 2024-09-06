@@ -14235,7 +14235,7 @@ If the target object is on the left side of the ego lane the avoidance would be 
 Currently, avoiding left-shifted obstacles from the left side is not supported (same for right-shifted objects).</p>
 <h4 id="why-is-an-envelope-polygon-used-for-the-target-object">Why is an envelope polygon used for the target object?<a class="headerlink" href="#why-is-an-envelope-polygon-used-for-the-target-object" title="Permanent link">#</a></h4>
 <p>It is employed to reduce the influence of the perception/tracking noise for each target object.
-The envelope polygon is a rectange, whose size depends on the object's polygon and buffer parameter and it is always parallel to the reference path.
+The envelope polygon is a rectangle, whose size depends on the object's polygon and buffer parameter and it is always parallel to the reference path.
 The envelope polygon is created by using the latest one-shot envelope polygon and the previous envelope polygon.
 Details are explained in <a href="#how-to-prevent-shift-line-chattering-that-is-caused-by-perception-noise">How to prevent shift line chattering that is caused by perception noise section</a>.</p>
 <h4 id="what-happens-if-the-module-cannot-find-a-safe-avoidance-path">What happens if the module cannot find a safe avoidance path?<a class="headerlink" href="#what-happens-if-the-module-cannot-find-a-safe-avoidance-path" title="Permanent link">#</a></h4>
