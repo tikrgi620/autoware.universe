@@ -13215,6 +13215,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#prerequisites_1" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#how-to-run" class="md-nav__link">
     How to run
   </a>
@@ -13231,6 +13238,13 @@
           <li class="md-nav__item">
   <a href="#published-topics" class="md-nav__link">
     Published Topics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services" class="md-nav__link">
+    Services
   </a>
   
 </li>
@@ -13459,9 +13473,60 @@ Please see <a href="https://github.com/autowarefoundation/autoware_msgs/tree/mai
 <hr>
 <h2 id="lanelet2_map_loader">lanelet2_map_loader<a class="headerlink" href="#lanelet2_map_loader" title="Permanent link">#</a></h2>
 <h3 id="feature_1">Feature<a class="headerlink" href="#feature_1" title="Permanent link">#</a></h3>
-<p>lanelet2_map_loader loads Lanelet2 file and publishes the map data as autoware_map_msgs/LaneletMapBin message.
+<p><code>lanelet2_map_loader</code> loads Lanelet2 file(s) and publishes the map data as <code>autoware_map_msgs/LaneletMapBin</code> message.
 The node projects lan/lon coordinates into arbitrary coordinates defined in <code>/map/map_projector_info</code> from <code>map_projection_loader</code>.
-Please see <a href="https://github.com/tier4/tier4_autoware_msgs/blob/tier4/universe/tier4_map_msgs/msg/MapProjectorInfo.msg">tier4_autoware_msgs/msg/MapProjectorInfo.msg</a> for supported projector types.</p>
+Please see <a href="https://github.com/tier4/tier4_autoware_msgs/blob/tier4/universe/tier4_map_msgs/msg/MapProjectorInfo.msg">tier4_autoware_msgs/msg/MapProjectorInfo.msg</a> for supported projector types.
+lanelet2_map_loader provides Lanelet2 maps in two different configurations:</p>
+<ul>
+<li>It loads single Lanelet2 file and publishes the map data as <code>autoware_map_msgs/LaneletMapBin</code> message.</li>
+<li>It loads multiple Lanelet2 files differentially via ROS 2 service.</li>
+</ul>
+<p>NOTE: <strong>If you work on large scale area, we recommend to use differential loading feature to avoid the time-consuming
+in various nodes that use the Lanelet2 map data.</strong></p>
+<h3 id="prerequisites_1">Prerequisites<a class="headerlink" href="#prerequisites_1" title="Permanent link">#</a></h3>
+<h4 id="prerequisites-on-lanelet2-map-files">Prerequisites on Lanelet2 map file(s)<a class="headerlink" href="#prerequisites-on-lanelet2-map-files" title="Permanent link">#</a></h4>
+<p>You may provide either a single <code>.osm</code> file or multiple <code>.osm</code> files. If you are using multiple OSM file,
+it MUST obey the following rules:</p>
+<ol>
+<li><strong>The <code>.osm</code> files should all be within the same MGRS grid</strong>. The system does not support loading multiple <code>.osm</code> files from different MGRS grids.</li>
+<li><strong>It must be divided by straight lines parallel to the x-axis and y-axis</strong>. The system does not support division by diagonal lines or curved lines.</li>
+<li><strong>Metadata file should also be provided.</strong> The metadata structure description is provided below.</li>
+</ol>
+<h4 id="metadata-structure_1">Metadata structure<a class="headerlink" href="#metadata-structure_1" title="Permanent link">#</a></h4>
+<p>The metadata should look like this:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">x_resolution</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20.0</span>
+<span class="nt">y_resolution</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20.0</span>
+<span class="nt">A.osm</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">1200</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2500</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># -&gt; 1200 &lt; x &lt; 1220, 2500 &lt; y &lt; 2520</span>
+<span class="nt">B.osm</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">1220</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2500</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># -&gt; 1220 &lt; x &lt; 1240, 2500 &lt; y &lt; 2520</span>
+<span class="nt">C.osm</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">1200</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2520</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># -&gt; 1200 &lt; x &lt; 1220, 2520 &lt; y &lt; 2540</span>
+<span class="nt">D.osm</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">1240</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2520</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># -&gt; 1240 &lt; x &lt; 1260, 2520 &lt; y &lt; 2540</span>
+</code></pre></div>
+<p>where,</p>
+<ul>
+<li><code>x_resolution</code> and <code>y_resolution</code> are the resolution of the map in meters.</li>
+<li><code>A.osm</code>, <code>B.osm</code>, etc, are the names of OSM files.</li>
+<li>List such as <code>[1200, 2500]</code> are the values indicate that for this OSM file, x coordinates are between 1200 and 1220 (<code>x_resolution</code> + <code>x_coordinate</code>) and y coordinates are between 2500 and 2520 (<code>y_resolution</code> + <code>y_coordinate</code>).</li>
+</ul>
+<p>You may use <a href="https://github.com/leo-drive/lanelet2-map-tile-generator">lanelet2_map_tile_generator</a> from LeoDrive for
+dividing Lanelet2 map as well as generating the compatible metadata.yaml.</p>
+<h4 id="directory-structure-of-these-files_1">Directory structure of these files<a class="headerlink" href="#directory-structure-of-these-files_1" title="Permanent link">#</a></h4>
+<p>If you only have one Lanelet2 map, Autoware will assume the following directory structure by default.</p>
+<div class="highlight"><pre><span></span><code>sample-map-rosbag
+├──<span class="w"> </span>lanelet2_map.osm
+├──<span class="w"> </span>pointcloud_map.pcd
+</code></pre></div>
+<p>If you have multiple Lanelet2 maps, an example directory structure would be as follows. Note that you need to have a metadata when you have multiple Lanelet2 map files.</p>
+<div class="highlight"><pre><span></span><code>sample-map-rosbag
+├──<span class="w"> </span>pointcloud_map.pcd
+├──<span class="w"> </span>lanelet2_map.osm
+│<span class="w"> </span>├──<span class="w"> </span>A.osm
+│<span class="w"> </span>├──<span class="w"> </span>B.osm
+│<span class="w"> </span>├──<span class="w"> </span>C.osm
+│<span class="w"> </span>└──<span class="w"> </span>...
+├──<span class="w"> </span>map_projector_info.yaml
+├──<span class="w"> </span>lanelet2_map_metadata.yaml
+└──<span class="w"> </span>...
+</code></pre></div>
 <h3 id="how-to-run">How to run<a class="headerlink" href="#how-to-run" title="Permanent link">#</a></h3>
 <p><code>ros2 run map_loader lanelet2_map_loader --ros-args -p lanelet2_map_path:=path/to/map.osm</code></p>
 <h3 id="subscribed-topics">Subscribed Topics<a class="headerlink" href="#subscribed-topics" title="Permanent link">#</a></h3>
@@ -13469,8 +13534,19 @@ Please see <a href="https://github.com/tier4/tier4_autoware_msgs/blob/tier4/univ
 <li>~input/map_projector_info (tier4_map_msgs/MapProjectorInfo) : Projection type for Autoware</li>
 </ul>
 <h3 id="published-topics">Published Topics<a class="headerlink" href="#published-topics" title="Permanent link">#</a></h3>
+<p>If you use single Lanelet2 map file:</p>
 <ul>
 <li>~output/lanelet2_map (autoware_map_msgs/LaneletMapBin) : Binary data of loaded Lanelet2 Map</li>
+</ul>
+<p>If you use multiple Lanelet2 map files:</p>
+<ul>
+<li>~output/dynamic_lanelet2_map (autoware_map_msgs/LaneletMapBin) : Binary data of loaded Lanelet2 Map</li>
+<li>~output/lanelet_map_meta_data (autoware_map_msgs/msg/LaneletMapMetaData) : Metadata of Lanelet2 Map</li>
+</ul>
+<h3 id="services">Services<a class="headerlink" href="#services" title="Permanent link">#</a></h3>
+<p>If you use multiple Lanelet2 map files:</p>
+<ul>
+<li>~service/get_differential_lanelet_map (autoware_map_msgs/srv/GetSelectedLanelet2Map) : Differential loading of Lanelet2 Map</li>
 </ul>
 <h3 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">#</a></h3>
 <table>
