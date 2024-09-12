@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#macro-syntax-error" class="md-skip">
+        <a href="#dummy_perception_publisher" class="md-skip">
           Skip to content
         </a>
       
@@ -13229,6 +13229,89 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#purpose" class="md-nav__link">
+    Purpose
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inner-workings-algorithms" class="md-nav__link">
+    Inner-workings / Algorithms
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inputs-outputs" class="md-nav__link">
+    Inputs / Outputs
+  </a>
+  
+    <nav class="md-nav" aria-label="Inputs / Outputs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input" class="md-nav__link">
+    Input
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output" class="md-nav__link">
+    Output
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#node-parameters" class="md-nav__link">
+    Node Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core-parameters" class="md-nav__link">
+    Core Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assumptions-known-limits" class="md-nav__link">
+    Assumptions / Known limits
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -13245,11 +13328,143 @@
   
 
 
-<div><h1 id="macro-syntax-error"><em>Macro Syntax Error</em><a class="headerlink" href="#macro-syntax-error" title="Permanent link">#</a></h1>
-<p><em>File</em>: <code>simulator/dummy_perception_publisher/README.md</code></p>
-<p><em>Line 28 in Markdown file:</em> <strong>unexpected char '"' at 1219</strong>
-</p><div class="highlight"><pre><span></span><code>{{json_to_markdown("simulator/dummy_perception_publisher/schema/dummy_perception_publisher.schema.json)}}
-</code></pre></div></div>
+<div><h1 id="dummy_perception_publisher">dummy_perception_publisher<a class="headerlink" href="#dummy_perception_publisher" title="Permanent link">#</a></h1>
+<h2 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link">#</a></h2>
+<p>This node publishes the result of the dummy detection with the type of perception.</p>
+<h2 id="inner-workings-algorithms">Inner-workings / Algorithms<a class="headerlink" href="#inner-workings-algorithms" title="Permanent link">#</a></h2>
+<h2 id="inputs-outputs">Inputs / Outputs<a class="headerlink" href="#inputs-outputs" title="Permanent link">#</a></h2>
+<h3 id="input">Input<a class="headerlink" href="#input" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/tf</code></td>
+<td><code>tf2_msgs/TFMessage</code></td>
+<td>TF (self-pose)</td>
+</tr>
+<tr>
+<td><code>input/object</code></td>
+<td><code>tier4_simulation_msgs::msg::DummyObject</code></td>
+<td>dummy detection objects</td>
+</tr>
+</tbody>
+</table>
+<h3 id="output">Output<a class="headerlink" href="#output" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>output/dynamic_object</code></td>
+<td><code>tier4_perception_msgs::msg::DetectedObjectsWithFeature</code></td>
+<td>dummy detection objects</td>
+</tr>
+<tr>
+<td><code>output/points_raw</code></td>
+<td><code>sensor_msgs::msg::PointCloud2</code></td>
+<td>point cloud of objects</td>
+</tr>
+<tr>
+<td><code>output/debug/ground_truth_objects</code></td>
+<td><code>autoware_perception_msgs::msg::TrackedObjects</code></td>
+<td>ground truth objects</td>
+</tr>
+</tbody>
+</table>
+<h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+<th>Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>visible_range</td>
+<td>float</td>
+<td>sensor visible range [m]</td>
+<td>100</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>detection_successful_rate</td>
+<td>float</td>
+<td>sensor detection rate. (min) 0.0 - 1.0(max)</td>
+<td>0.8</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>enable_ray_tracing</td>
+<td>boolean</td>
+<td>if True, use ray tracing</td>
+<td>1</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>use_object_recognition</td>
+<td>boolean</td>
+<td>if True, publish objects topic</td>
+<td>1</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>use_base_link_z</td>
+<td>boolean</td>
+<td>if True, node uses z coordinate of ego base_link</td>
+<td>1</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>object_centric_pointcloud</td>
+<td>boolean</td>
+<td>if True, use object-centric point cloud for detection.</td>
+<td>0</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>publish_ground_truth</td>
+<td>boolean</td>
+<td>if True, publish ground truth objects</td>
+<td>0</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>random_seed</td>
+<td>float</td>
+<td>random seed</td>
+<td>0</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>use_fixed_random_seed</td>
+<td>boolean</td>
+<td>if True, use fixed random seed</td>
+<td>0</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<h3 id="node-parameters">Node Parameters<a class="headerlink" href="#node-parameters" title="Permanent link">#</a></h3>
+<p>None.</p>
+<h3 id="core-parameters">Core Parameters<a class="headerlink" href="#core-parameters" title="Permanent link">#</a></h3>
+<p>None.</p>
+<h2 id="assumptions-known-limits">Assumptions / Known limits<a class="headerlink" href="#assumptions-known-limits" title="Permanent link">#</a></h2>
+<p>TBD.</p></div>
 
 
 
