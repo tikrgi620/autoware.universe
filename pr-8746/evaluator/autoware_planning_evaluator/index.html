@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#macro-rendering-error" class="md-skip">
+        <a href="#planning-evaluator" class="md-skip">
           Skip to content
         </a>
       
@@ -13229,6 +13229,96 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#purpose" class="md-nav__link">
+    Purpose
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inner-workings-algorithms" class="md-nav__link">
+    Inner-workings / Algorithms
+  </a>
+  
+    <nav class="md-nav" aria-label="Inner-workings / Algorithms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stat" class="md-nav__link">
+    Stat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metric-calculation-and-adding-more-metrics" class="md-nav__link">
+    Metric calculation and adding more metrics
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inputs-outputs" class="md-nav__link">
+    Inputs / Outputs
+  </a>
+  
+    <nav class="md-nav" aria-label="Inputs / Outputs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputs" class="md-nav__link">
+    Inputs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs" class="md-nav__link">
+    Outputs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assumptions-known-limits" class="md-nav__link">
+    Assumptions / Known limits
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-extensions-unimplemented-parts" class="md-nav__link">
+    Future extensions / Unimplemented parts
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -13245,25 +13335,168 @@
   
 
 
-<div><h1 id="macro-rendering-error"><em>Macro Rendering Error</em><a class="headerlink" href="#macro-rendering-error" title="Permanent link">#</a></h1>
-<p><em>File</em>: <code>evaluator/autoware_planning_evaluator/README.md</code></p>
-<p><em>KeyError</em>: 'type'</p>
-<div class="highlight"><pre><span></span><code>Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/mkdocs_macros/plugin.py", line 527, in render
-    return md_template.render(**page_variables)
-  File "/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/jinja2/environment.py", line 1304, in render
-    self.environment.handle_exception()
-  File "/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/jinja2/environment.py", line 939, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "&lt;template&gt;", line 70, in top-level template code
-  File "/home/runner/work/autoware.universe/autoware.universe/mkdocs_macros.py", line 72, in json_to_markdown
-    return format_json(data)
-  File "/home/runner/work/autoware.universe/autoware.universe/mkdocs_macros.py", line 63, in format_json
-    markdown_table = tabulate(extract_parameter_info(parameters), headers="keys", tablefmt="github")
-  File "/home/runner/work/autoware.universe/autoware.universe/mkdocs_macros.py", line 47, in extract_parameter_info
-    if v["type"] != "object":
-KeyError: 'type'
-</code></pre></div></div>
+<div><h1 id="planning-evaluator">Planning Evaluator<a class="headerlink" href="#planning-evaluator" title="Permanent link">#</a></h1>
+<h2 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link">#</a></h2>
+<p>This package provides nodes that generate metrics to evaluate the quality of planning and control.</p>
+<h2 id="inner-workings-algorithms">Inner-workings / Algorithms<a class="headerlink" href="#inner-workings-algorithms" title="Permanent link">#</a></h2>
+<p>The evaluation node calculates metrics each time it receives a trajectory <code>T(0)</code>.
+Metrics are calculated using the following information:</p>
+<ul>
+<li>the trajectory <code>T(0)</code> itself.</li>
+<li>the previous trajectory <code>T(-1)</code>.</li>
+<li>the <em>reference</em> trajectory assumed to be used as the reference to plan <code>T(0)</code>.</li>
+<li>the current ego pose.</li>
+<li>the set of objects in the environment.</li>
+</ul>
+<p>These information are maintained by an instance of class <code>MetricsCalculator</code>
+which is also responsible for calculating metrics.</p>
+<h3 id="stat">Stat<a class="headerlink" href="#stat" title="Permanent link">#</a></h3>
+<p>Each metric is calculated using a <code>Stat</code> instance which contains
+the minimum, maximum, and mean values calculated for the metric
+as well as the number of values measured.</p>
+<h3 id="metric-calculation-and-adding-more-metrics">Metric calculation and adding more metrics<a class="headerlink" href="#metric-calculation-and-adding-more-metrics" title="Permanent link">#</a></h3>
+<p>All possible metrics are defined in the <code>Metric</code> enumeration defined
+<code>include/planning_evaluator/metrics/metric.hpp</code>.
+This file also defines conversions from/to string as well as human readable descriptions
+to be used as header of the output file.</p>
+<p>The <code>MetricsCalculator</code> is responsible for calculating metric statistics
+through calls to function:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Stat</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">MetricsCalculator</span><span class="o">::</span><span class="n">calculate</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Metric</span><span class="w"> </span><span class="n">metric</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Trajectory</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">traj</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+</code></pre></div>
+<p>Adding a new metric <code>M</code> requires the following steps:</p>
+<ul>
+<li><code>metrics/metric.hpp</code>: add <code>M</code> to the <code>enum</code>, to the from/to string conversion maps, and to the description map.</li>
+<li><code>metrics_calculator.cpp</code>: add <code>M</code> to the <code>switch/case</code> statement of the <code>calculate</code> function.</li>
+<li>Add <code>M</code> to the <code>selected_metrics</code> parameters.</li>
+</ul>
+<h2 id="inputs-outputs">Inputs / Outputs<a class="headerlink" href="#inputs-outputs" title="Permanent link">#</a></h2>
+<h3 id="inputs">Inputs<a class="headerlink" href="#inputs" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>~/input/trajectory</code></td>
+<td><code>autoware_planning_msgs::msg::Trajectory</code></td>
+<td>Main trajectory to evaluate</td>
+</tr>
+<tr>
+<td><code>~/input/reference_trajectory</code></td>
+<td><code>autoware_planning_msgs::msg::Trajectory</code></td>
+<td>Reference trajectory to use for deviation metrics</td>
+</tr>
+<tr>
+<td><code>~/input/objects</code></td>
+<td><code>autoware_perception_msgs::msg::PredictedObjects</code></td>
+<td>Obstacles</td>
+</tr>
+</tbody>
+</table>
+<h3 id="outputs">Outputs<a class="headerlink" href="#outputs" title="Permanent link">#</a></h3>
+<p>Each metric is published on a topic named after the metric name.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>~/metrics</code></td>
+<td><code>diagnostic_msgs::msg::DiagnosticArray</code></td>
+<td>DiagnosticArray with a DiagnosticStatus for each metric</td>
+</tr>
+</tbody>
+</table>
+<p>When shut down, the evaluation node writes the values of the metrics measured during its lifetime
+to a file as specified by the <code>output_file</code> parameter.</p>
+<h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+<th>Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>output_file</td>
+<td>string</td>
+<td>output metrics file path</td>
+<td></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>ego_frame</td>
+<td>string</td>
+<td>reference frame of ego</td>
+<td>base_link</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>selected_metrics</td>
+<td>array</td>
+<td>metrics to collect/record</td>
+<td>['curvature', 'point_interval', 'relative_angle', 'length', 'duration', 'velocity', 'acceleration', 'jerk', 'lateral_deviation', 'yaw_deviation', 'velocity_deviation', 'stability', 'stability_frechet', 'obstacle_distance', 'obstacle_ttc', 'modified_goal_longitudinal_deviation', 'modified_goal_lateral_deviation', 'modified_goal_yaw_deviation']</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>trajectory.min_point_dist_m</td>
+<td>float</td>
+<td>minimum distance between two successive points to use for angle calculation</td>
+<td>0.1</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>lookahead.max_dist_m</td>
+<td>float</td>
+<td>maximum distance from ego along the trajectory to use for calculation</td>
+<td>5.0</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>lookahead.max_time_s</td>
+<td>float</td>
+<td>maximum time ahead of ego along the trajectory to use for calculation</td>
+<td>3.0</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>obstacle.dist_thr_m</td>
+<td>float</td>
+<td>distance between ego and the obstacle below which a collision is considered</td>
+<td>1.0</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<h2 id="assumptions-known-limits">Assumptions / Known limits<a class="headerlink" href="#assumptions-known-limits" title="Permanent link">#</a></h2>
+<p>There is a strong assumption that when receiving a trajectory <code>T(0)</code>,
+it has been generated using the last received reference trajectory and objects.
+This can be wrong if a new reference trajectory or objects are published while <code>T(0)</code> is being calculated.</p>
+<p>Precision is currently limited by the resolution of the trajectories.
+It is possible to interpolate the trajectory and reference trajectory to increase precision but would make computation significantly more expensive.</p>
+<h2 id="future-extensions-unimplemented-parts">Future extensions / Unimplemented parts<a class="headerlink" href="#future-extensions-unimplemented-parts" title="Permanent link">#</a></h2>
+<ul>
+<li>Use <code>Route</code> or <code>Path</code> messages as reference trajectory.</li>
+<li>RSS metrics (done in another node <a href="https://tier4.atlassian.net/browse/AJD-263">https://tier4.atlassian.net/browse/AJD-263</a>).</li>
+<li>Add option to publish the <code>min</code> and <code>max</code> metric values. For now only the <code>mean</code> value is published.</li>
+<li><code>motion_evaluator_node</code>.<ul>
+<li>Node which constructs a trajectory over time from the real motion of ego.</li>
+<li>Only a proof of concept is currently implemented.</li>
+</ul>
+</li>
+</ul></div>
 
 
 
