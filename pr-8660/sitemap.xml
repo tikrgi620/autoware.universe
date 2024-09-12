@@ -121,11 +121,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://autowarefoundation.github.io/autoware.universe/pr-8660/common/cuda_utils/</loc>
-         <lastmod>2024-09-12</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/pr-8660/common/fake_test_node/design/fake_test_node-design/</loc>
          <lastmod>2024-09-12</lastmod>
          <changefreq>daily</changefreq>
@@ -157,11 +152,6 @@
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/pr-8660/common/osqp_interface/design/osqp_interface-design/</loc>
-         <lastmod>2024-09-12</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://autowarefoundation.github.io/autoware.universe/pr-8660/common/perception_utils/</loc>
          <lastmod>2024-09-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -212,11 +202,6 @@
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/pr-8660/common/tier4_localization_rviz_plugin/</loc>
-         <lastmod>2024-09-12</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://autowarefoundation.github.io/autoware.universe/pr-8660/common/tier4_perception_rviz_plugin/</loc>
          <lastmod>2024-09-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -501,6 +486,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://autowarefoundation.github.io/autoware.universe/pr-8660/localization/autoware_pose_initializer/</loc>
+         <lastmod>2024-09-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/pr-8660/localization/autoware_pose_instability_detector/</loc>
          <lastmod>2024-09-12</lastmod>
          <changefreq>daily</changefreq>
@@ -527,11 +517,6 @@
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/pr-8660/localization/ndt_scan_matcher/</loc>
-         <lastmod>2024-09-12</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://autowarefoundation.github.io/autoware.universe/pr-8660/localization/pose_initializer/</loc>
          <lastmod>2024-09-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -867,6 +852,11 @@
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/pr-8660/perception/autoware_traffic_light_visualization/</loc>
+         <lastmod>2024-09-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://autowarefoundation.github.io/autoware.universe/pr-8660/perception/perception_utils/</loc>
          <lastmod>2024-09-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1336,6 +1326,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://autowarefoundation.github.io/autoware.universe/pr-8660/sensing/cuda_utils/</loc>
+         <lastmod>2024-09-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/pr-8660/sensing/livox/autoware_livox_tag_filter/</loc>
          <lastmod>2024-09-12</lastmod>
          <changefreq>daily</changefreq>
@@ -1367,6 +1362,11 @@
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/pr-8660/simulator/simple_planning_simulator/</loc>
+         <lastmod>2024-09-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://autowarefoundation.github.io/autoware.universe/pr-8660/simulator/tier4_dummy_object_rviz_plugin/</loc>
          <lastmod>2024-09-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
