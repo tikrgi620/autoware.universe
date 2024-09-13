@@ -13421,46 +13421,62 @@ to a file as specified by the <code>output_file</code> parameter.</p>
 <table>
 <thead>
 <tr>
-<th align="left">Name</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+<th>Range</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>output_file</code></td>
-<td align="left"><code>string</code></td>
-<td align="left">file used to write metrics</td>
+<td>output_file</td>
+<td>string</td>
+<td>output metrics file path</td>
+<td></td>
+<td>N/A</td>
 </tr>
 <tr>
-<td align="left"><code>ego_frame</code></td>
-<td align="left"><code>string</code></td>
-<td align="left">frame used for the ego pose</td>
+<td>ego_frame</td>
+<td>string</td>
+<td>reference frame of ego</td>
+<td>base_link</td>
+<td>N/A</td>
 </tr>
 <tr>
-<td align="left"><code>selected_metrics</code></td>
-<td align="left">List</td>
-<td align="left">metrics to measure and publish</td>
+<td>selected_metrics</td>
+<td>array</td>
+<td>metrics to collect/record</td>
+<td>['curvature', 'point_interval', 'relative_angle', 'length', 'duration', 'velocity', 'acceleration', 'jerk', 'lateral_deviation', 'yaw_deviation', 'velocity_deviation', 'stability', 'stability_frechet', 'obstacle_distance', 'obstacle_ttc', 'modified_goal_longitudinal_deviation', 'modified_goal_lateral_deviation', 'modified_goal_yaw_deviation']</td>
+<td>N/A</td>
 </tr>
 <tr>
-<td align="left"><code>trajectory.min_point_dist_m</code></td>
-<td align="left"><code>double</code></td>
-<td align="left">minimum distance between two successive points to use for angle calculation</td>
+<td>trajectory.min_point_dist_m</td>
+<td>float</td>
+<td>minimum distance between two successive points to use for angle calculation</td>
+<td>0.1</td>
+<td>N/A</td>
 </tr>
 <tr>
-<td align="left"><code>trajectory.lookahead.max_dist_m</code></td>
-<td align="left"><code>double</code></td>
-<td align="left">maximum distance from ego along the trajectory to use for calculation</td>
+<td>lookahead.max_dist_m</td>
+<td>float</td>
+<td>maximum distance from ego along the trajectory to use for calculation</td>
+<td>5.0</td>
+<td>N/A</td>
 </tr>
 <tr>
-<td align="left"><code>trajectory.lookahead.max_time_m</code></td>
-<td align="left"><code>double</code></td>
-<td align="left">maximum time ahead of ego along the trajectory to use for calculation</td>
+<td>lookahead.max_time_s</td>
+<td>float</td>
+<td>maximum time ahead of ego along the trajectory to use for calculation</td>
+<td>3.0</td>
+<td>N/A</td>
 </tr>
 <tr>
-<td align="left"><code>obstacle.dist_thr_m</code></td>
-<td align="left"><code>double</code></td>
-<td align="left">distance between ego and the obstacle below which a collision is considered</td>
+<td>obstacle.dist_thr_m</td>
+<td>float</td>
+<td>distance between ego and the obstacle below which a collision is considered</td>
+<td>1.0</td>
+<td>N/A</td>
 </tr>
 </tbody>
 </table>
