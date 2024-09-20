@@ -1551,11 +1551,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://autowarefoundation.github.io/autoware.universe/pr-7750/system/emergency_handler/</loc>
-         <lastmod>2024-09-20</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/pr-7750/system/mrm_comfortable_stop_operator/</loc>
          <lastmod>2024-09-20</lastmod>
          <changefreq>daily</changefreq>
