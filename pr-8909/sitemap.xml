@@ -476,6 +476,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://autowarefoundation.github.io/autoware.universe/pr-8909/localization/autoware_localization_util/</loc>
+         <lastmod>2024-09-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/pr-8909/localization/autoware_ndt_scan_matcher/</loc>
          <lastmod>2024-09-20</lastmod>
          <changefreq>daily</changefreq>
@@ -517,11 +522,6 @@
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/pr-8909/localization/autoware_twist2accel/</loc>
-         <lastmod>2024-09-20</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://autowarefoundation.github.io/autoware.universe/pr-8909/localization/localization_util/</loc>
          <lastmod>2024-09-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1547,11 +1547,6 @@
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/pr-8909/system/duplicated_node_checker/</loc>
-         <lastmod>2024-09-20</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://autowarefoundation.github.io/autoware.universe/pr-8909/system/emergency_handler/</loc>
          <lastmod>2024-09-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
