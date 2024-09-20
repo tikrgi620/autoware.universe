@@ -46,6 +46,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://autowarefoundation.github.io/autoware.universe/main/common/autoware_interpolation/</loc>
+         <lastmod>2024-09-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/main/common/autoware_kalman_filter/</loc>
          <lastmod>2024-09-20</lastmod>
          <changefreq>daily</changefreq>
@@ -152,11 +157,6 @@
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/main/common/goal_distance_calculator/Readme/</loc>
-         <lastmod>2024-09-20</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://autowarefoundation.github.io/autoware.universe/main/common/interpolation/</loc>
          <lastmod>2024-09-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
