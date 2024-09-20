@@ -86,6 +86,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://autowarefoundation.github.io/autoware.universe/latest/common/autoware_signal_processing/</loc>
+         <lastmod>2024-09-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://autowarefoundation.github.io/autoware.universe/latest/common/autoware_signal_processing/documentation/ButterworthFilter/</loc>
+         <lastmod>2024-09-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/latest/common/autoware_test_utils/</loc>
          <lastmod>2024-09-20</lastmod>
          <changefreq>daily</changefreq>
@@ -167,16 +177,6 @@
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/latest/common/qp_interface/design/qp_interface-design/</loc>
-         <lastmod>2024-09-20</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://autowarefoundation.github.io/autoware.universe/latest/common/signal_processing/</loc>
-         <lastmod>2024-09-20</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://autowarefoundation.github.io/autoware.universe/latest/common/signal_processing/documentation/ButterworthFilter/</loc>
          <lastmod>2024-09-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
