@@ -66,6 +66,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://autowarefoundation.github.io/autoware.universe/main/common/autoware_object_recognition_utils/</loc>
+         <lastmod>2024-10-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/main/common/autoware_osqp_interface/design/osqp_interface-design/</loc>
          <lastmod>2024-10-15</lastmod>
          <changefreq>daily</changefreq>
@@ -167,11 +172,6 @@
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/main/common/goal_distance_calculator/Readme/</loc>
-         <lastmod>2024-10-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://autowarefoundation.github.io/autoware.universe/main/common/object_recognition_utils/</loc>
          <lastmod>2024-10-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
