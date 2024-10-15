@@ -1,9 +1,9 @@
 version: 0.2
 
 phases:
-  pre_build:
+  install:
     commands:
-      - sudo dd if=/dev/zero of=/swapfile bs=1G count=15
-      - sudo chmod 600 /swapfile
-      - sudo mkswap /swapfile
-      - sudo swapon /swapfile
+      - dd if=/dev/zero of=/swapfile bs=1G count=15
+      - chmod 600 /swapfile
+      - mkswap /swapfile
+      - swapon /swapfile
