@@ -41,7 +41,7 @@ jobs:
       - name: Show machine specs
         run: lscpu && free -h
 
-      - name: Create Increase Swap Size
+      - name: Increase Swap Size
         run: |
           dd if=/dev/zero of=/swapfile bs=1G count=15
           chmod 600 /swapfile
