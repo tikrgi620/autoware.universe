@@ -36,6 +36,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://autowarefoundation.github.io/autoware.universe/latest/common/autoware_component_interface_specs/</loc>
+         <lastmod>2024-10-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/latest/common/autoware_component_interface_tools/</loc>
          <lastmod>2024-10-29</lastmod>
          <changefreq>daily</changefreq>
@@ -147,11 +152,6 @@
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/latest/common/bag_time_manager_rviz_plugin/</loc>
-         <lastmod>2024-10-29</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://autowarefoundation.github.io/autoware.universe/latest/common/component_interface_specs/</loc>
          <lastmod>2024-10-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
