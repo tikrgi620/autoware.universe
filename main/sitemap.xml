@@ -151,6 +151,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://autowarefoundation.github.io/autoware.universe/main/common/autoware_trajectory/</loc>
+         <lastmod>2024-11-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/main/common/autoware_universe_utils/</loc>
          <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
