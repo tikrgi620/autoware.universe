@@ -251,21 +251,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://autowarefoundation.github.io/autoware.universe/latest/common/tvm_utility/</loc>
-         <lastmod>2024-11-12</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://autowarefoundation.github.io/autoware.universe/latest/common/tvm_utility/tvm-utility-yolo-v2-tiny-tests/</loc>
-         <lastmod>2024-11-12</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://autowarefoundation.github.io/autoware.universe/latest/common/tvm_utility/artifacts/</loc>
-         <lastmod>2024-11-12</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/latest/control/autoware_autonomous_emergency_braking/</loc>
          <lastmod>2024-11-12</lastmod>
          <changefreq>daily</changefreq>
