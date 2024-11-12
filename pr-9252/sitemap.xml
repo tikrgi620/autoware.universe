@@ -1391,7 +1391,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://autowarefoundation.github.io/autoware.universe/pr-9252/simulator/simple_planning_simulator/docs/actuation-cmd-sim/</loc>
+         <loc>https://autowarefoundation.github.io/autoware.universe/pr-9252/simulator/simple_planning_simulator/docs/actuation_cmd_sim/</loc>
          <lastmod>2024-11-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
