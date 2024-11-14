@@ -13374,6 +13374,7 @@
 <h4 id="outputs">Outputs<a class="headerlink" href="#outputs" title="Permanent link">#</a></h4>
 <ul>
 <li><code>autoware_control_msgs/Control</code>: message containing both lateral and longitudinal commands.</li>
+<li><code>autoware_control_msgs/ControlHorizon</code>: message containing both lateral and longitudinal horizon commands. this is NOT published by default. by using this, the performance of vehicle control may be improved, and by turning the default on, it can be used as an experimental topic.</li>
 </ul>
 <h4 id="parameter">Parameter<a class="headerlink" href="#parameter" title="Permanent link">#</a></h4>
 <ul>
@@ -13390,6 +13391,7 @@
 <li>(currently there is only <code>PID</code> for longitudinal controller)</li>
 </ul>
 </li>
+<li><code>enable_control_cmd_horizon_pub</code>: publish <code>ControlHorizon</code> or not (default: false)</li>
 </ul>
 <h2 id="debugging">Debugging<a class="headerlink" href="#debugging" title="Permanent link">#</a></h2>
 <p>Debug information are published by the lateral and longitudinal controller using <code>tier4_debug_msgs/Float32MultiArrayStamped</code> messages.</p>
