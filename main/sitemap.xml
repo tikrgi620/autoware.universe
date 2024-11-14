@@ -51,6 +51,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://autowarefoundation.github.io/autoware.universe/main/common/autoware_fake_test_node/design/fake_test_node-design/</loc>
+         <lastmod>2024-11-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/main/common/autoware_geography_utils/</loc>
          <lastmod>2024-11-14</lastmod>
          <changefreq>daily</changefreq>
@@ -172,11 +177,6 @@
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/main/common/bag_time_manager_rviz_plugin/</loc>
-         <lastmod>2024-11-14</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://autowarefoundation.github.io/autoware.universe/main/common/fake_test_node/design/fake_test_node-design/</loc>
          <lastmod>2024-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
