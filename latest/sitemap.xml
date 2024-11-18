@@ -156,6 +156,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://autowarefoundation.github.io/autoware.universe/latest/common/autoware_traffic_light_utils/</loc>
+         <lastmod>2024-11-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/latest/common/autoware_trajectory/</loc>
          <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
@@ -242,11 +247,6 @@
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/latest/common/traffic_light_recognition_marker_publisher/Readme/</loc>
-         <lastmod>2024-11-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://autowarefoundation.github.io/autoware.universe/latest/common/traffic_light_utils/</loc>
          <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
