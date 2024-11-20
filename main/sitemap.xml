@@ -1376,6 +1376,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://autowarefoundation.github.io/autoware.universe/main/simulator/simple_planning_simulator/docs/actuation_cmd_sim/</loc>
+         <lastmod>2024-11-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/main/simulator/tier4_dummy_object_rviz_plugin/</loc>
          <lastmod>2024-11-20</lastmod>
          <changefreq>daily</changefreq>
