@@ -1216,6 +1216,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://autowarefoundation.github.io/autoware.universe/latest/sensing/autoware_cuda_utils/</loc>
+         <lastmod>2024-11-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/latest/sensing/autoware_gnss_poser/</loc>
          <lastmod>2024-11-20</lastmod>
          <changefreq>daily</changefreq>
@@ -1332,11 +1337,6 @@
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/autoware.universe/latest/sensing/autoware_radar_tracks_noise_filter/</loc>
-         <lastmod>2024-11-20</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://autowarefoundation.github.io/autoware.universe/latest/sensing/cuda/autoware_cuda_utils/</loc>
          <lastmod>2024-11-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
