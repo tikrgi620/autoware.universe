@@ -14121,14 +14121,14 @@ If the ego vehicle velocity is smaller than <code>stuck_detection.velocity</code
 <td align="left"><code>collision_check.check_current_lanes</code></td>
 <td>[-]</td>
 <td>boolean</td>
-<td>If true, the lane change module check objects on current lanes when performing collision assessment.</td>
+<td>If true, the lane change module always checks objects in the current lanes for collision assessment. If false, it only checks objects in the current lanes when the ego vehicle is stuck.</td>
 <td>false</td>
 </tr>
 <tr>
 <td align="left"><code>collision_check.check_other_lanes</code></td>
 <td>[-]</td>
 <td>boolean</td>
-<td>If true, the lane change module include objects on other lanes. when performing collision assessment</td>
+<td>If true, the lane change module includes objects in other lanes when performing collision assessment.</td>
 <td>false</td>
 </tr>
 <tr>
